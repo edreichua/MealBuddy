@@ -20,7 +20,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".AcceptActivity">
+        <activity
+            android:name=".AcceptActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name=".AcceptActivity" />
 
