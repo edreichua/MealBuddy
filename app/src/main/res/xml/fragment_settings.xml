@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <!-- Account Preferences -->
+    <PreferenceCategory
+        android:title="@string/ui_account_pref_title">
+
+        <PreferenceScreen
+            android:title="@string/ui_pref_profile"
+            android:summary="@string/ui_pref_profile_comment">
+            <intent android:action="com.example.mealbuddy.mealbuddy.UserProfileActivity" />
+        </PreferenceScreen>
+
+        <CheckBoxPreference
+            android:key="privacy_setting_checkbox_preference"
+            android:title="@string/ui_pref_contact"
+            android:summary="@string/ui_pref_contact_comment" />
+
+        <SwitchPreference
+            android:key="privacy_setting_checkbox_preference"
+            android:title="@string/ui_pref_location"
+            android:summary="@string/ui_pref_location_comment" />
+
+    </PreferenceCategory>
+
+
+    <!-- Misc. -->
+    <PreferenceCategory
+        android:title="@string/ui_misc_title">
+
+        <PreferenceScreen
+            android:title="@string/ui_pref_webpage"
+            android:summary="@string/ui_pref_webpage_comment">
+            <intent android:action="android.intent.action.VIEW"
+                android:data="http://mealbuddy.wix.com/main" />
+        </PreferenceScreen>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

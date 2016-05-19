@@ -4,5 +4,35 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <!-- **************** Settings Tab **************** -->
+
+    <!-- Headings for UI-->
+    <string name="ui_account_pref_title">Account Preferences</string>
+    <string name="ui_misc_title">Misc.</string>
+
+    <!-- Preference Text for UI-->
+    <string name="ui_pref_profile">Name, Email, Class, etc</string>
+    <string name="ui_pref_profile_comment">User Profile</string>
+
+    <string name="ui_pref_contact">Contact Sharing</string>
+    <string name="ui_pref_contact_comment">Allow your match to view contact information</string>
+
+    <string name="ui_pref_location">Location</string>
+    <string name="ui_pref_location_comment">Allow your friends to track you</string>
+
+
+    <string name="ui_pref_webpage">Webpage</string>
+    <string name="ui_pref_webpage_comment">http://mealbuddy.wix.com/main</string>
+
+
+    <!-- Text for UI-->
+    <string name="ui_profile_photo_title">Profile Photo:</string>
+    <string name="ui_name_title">Name</string>
+    <string name="ui_email_title">Blitz</string>
+    <string name="ui_phone_title">Phone</string>
+    <string name="ui_class_title">Year</string>
+    <string name="ui_major_title">Major</string>
+    <string name="ui_time_title">Major</string>
+
     <string name="action_settings">Settings</string>
 </resources>
