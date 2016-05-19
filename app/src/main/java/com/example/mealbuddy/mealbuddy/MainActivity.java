@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_settings) {
             frag = new SettingsFragment();
         } else if (id == R.id.nav_notification) {
-            frag = new SettingsFragment();
+            frag = new NotificationFragment();
         } else if (id == R.id.nav_about) {
             frag = new SettingsFragment();
         }

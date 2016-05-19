@@ -20,6 +20,14 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".AcceptActivity">
+            <intent-filter>
+                <action android:name=".AcceptActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
