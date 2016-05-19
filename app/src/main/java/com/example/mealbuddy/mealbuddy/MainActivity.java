@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity
 
         // Set to default view
         if (savedInstanceState == null ) {
-            Fragment frag = new SettingsFragment();
+            Fragment frag = new MainFragment();
             getFragmentManager().beginTransaction().
                     add(R.id.content_frame, frag).commit();
         }
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity
 
         // Find the appropriate fragment
         if (id == R.id.nav_main) {
-            frag = new SettingsFragment();
+            frag = new MainFragment();
         } else if (id == R.id.nav_settings) {
             frag = new SettingsFragment();
         } else if (id == R.id.nav_notification) {
