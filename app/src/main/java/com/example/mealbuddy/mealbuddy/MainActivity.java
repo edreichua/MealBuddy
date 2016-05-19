@@ -1,5 +1,6 @@
 package com.example.mealbuddy.mealbuddy;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -37,15 +38,8 @@ public class MainActivity extends AppCompatActivity
         // Set to default view
         if (savedInstanceState == null ) {
             Fragment frag = new SettingsFragment();
-            try {
-                frag = (PreferenceFragment) SettingsFragment.class.
-                        newInstance();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
             getFragmentManager().beginTransaction().
                     add(R.id.content_frame, frag).commit();
-
         }
     }
 
@@ -72,16 +66,23 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Fragment frag = null;
 
+        // Find the appropriate fragment
         if (id == R.id.nav_main) {
-            // Handle the camera action
+            frag = new SettingsFragment();
         } else if (id == R.id.nav_settings) {
-
+            frag = new SettingsFragment();
         } else if (id == R.id.nav_notification) {
-
+            frag = new SettingsFragment();
         } else if (id == R.id.nav_about) {
-
+            frag = new SettingsFragment();
         }
+
+
+        // Replace content frame with fragment
+        FragmentManager fragManager = getFragmentManager();
+        fragManager.beginTransaction().replace(R.id.content_frame, frag).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
