@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#FFF7F7"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:textColor="#FA7373"
+        android:text="ABOUT:"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:textColor="#ED9595"
+        android:text="Meet the Meal Buddies"/>
+
+    <ImageView
+        android:layout_marginTop="85dp"
+        android:layout_width="300dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/appteam" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:textSize="15sp"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:textColor="#ED9595"
+        android:text="Our team consists of Taeho Sung '17, Sean Cann '17, Jun Suh '17, and Edrei Chua '17."/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:textSize="15sp"
+        android:typeface="serif"
+        android:textStyle="bold"
+        android:textColor="#ED9595"
+        android:text="These four strapping lads are the creators of Meal Buddy, an app designed to help you conveniently grab meals with both old friends and new acquaintances. NOTE: THIS IS NOT A DATING APP. TINDER AND FRIENDSY SHOULD REALLY BE ENOUGH TO QUENCH YOUR THIRST."/>
+
+
+</RelativeLayout>
