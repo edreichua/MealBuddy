@@ -31,6 +31,7 @@
             android:gravity="center"
             android:typeface="serif"
             android:textStyle="bold|italic"
+            android:onClick="getMeal"
             android:text="Eat with a Stranger?"/>
 
     </LinearLayout>
