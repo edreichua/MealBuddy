@@ -2,81 +2,11 @@
 <items version="2" >
 
     <item
-        jar="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
+        jar="/Users/edreichua/Desktop/Spring16/COSC65/MealBuddy/MealBuddy/app/build/intermediates/exploded-aar/com.soundcloud.android/android-crop/1.0.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
-        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-381e43238241752bc25fdfbafa91a3f887e48ccf.jar" />
-    </item>
-    <item
-        jar="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/preference-v7/23.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="8f7b5e4b9523793c32db2190fdc3ed1093b7e560">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-35d19ee268456afe40fcfab69ff9942214034abb.jar" />
-    </item>
-    <item
-        jar="/Users/songtaeho16/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/support-annotations-23.3.0-c31496aa2421a8eee92c4b6102f2cfda7994a977.jar" />
-    </item>
-    <item
-        jar="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="debf30ce0a7560396b6235edef77e447006454c2">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-3bca8fb48657e7493b1b8bf739b45f1cfa06846e.jar" />
-    </item>
-    <item
-        jar="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-4c54cdde17a2b0ebd2229a12f893618945c1537d.jar" />
-    </item>
-    <item
-        jar="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/internal_impl-23.3.0-6924ac4af602a1486e8be498adbeb774f968aa6e.jar" />
-    </item>
-    <item
-        jar="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-227e03a1d2e3032c5682cd633249ef48e626cbd4.jar" />
-    </item>
-    <item
-        jar="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/support-v13/21.0.3/jars/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="0dcc55e70f7ebf7238fe2ec53f662eb378ab2668">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-ea8ec06d459853ffc982fd82ac6cabc804bd5fe8.jar" />
-    </item>
-    <item
-        jar="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-6ff8612bc844961599950f108fe5b8b87364ade2.jar" />
-    </item>
-    <item
-        jar="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/support-v13/21.0.3/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="2c2071dcaf7a008c3b01a6381a33be55396bab09">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-6a80e26635e8f411eb04bd454b9c8fd79fa50a07.jar" />
-    </item>
-    <item
-        jar="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.2"
-        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
-        <dex dex="/Users/songtaeho16/Desktop/cs65/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-a86924d095dafd3b03a4bbc7515645a224e01b0e.jar" />
+        sha1="11a65cf2b30c192b38a881d626fa771a78a2293d">
+        <dex dex="/Users/edreichua/Desktop/Spring16/COSC65/MealBuddy/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-ddceced109720f63e99e1d2551ce2145bbf858e4.jar" />
     </item>
 
 </items>

@@ -25,16 +25,65 @@
     <string name="ui_pref_webpage_comment">http://mealbuddy.wix.com/main</string>
 
 
+    <!-- Toast for UI -->
+    <string name="ui_toast_save">Saved</string>
+    <string name="ui_toast_error">Error</string>
+    <string name="ui_toast_cancel">Entry discarded</string>
+    <string name="action_settings">Settings</string>
+
+
+    <!-- **************** User Profile **************** -->
+
+    <!-- file names for images -->
+    <string name="profile_pict_filename">profile_pict.png</string>
+    <string name="temp_filename">temp.png</string>
+
+    <!-- constants for photo picker tag-->
+    <string name="photo_picker_tag">photo_picker_tag</string>
+
     <!-- Text for UI-->
     <string name="ui_profile_photo_title">Profile Photo:</string>
     <string name="ui_name_title">Name</string>
     <string name="ui_email_title">Blitz</string>
     <string name="ui_phone_title">Phone</string>
-    <string name="ui_class_title">Year</string>
+    <string name="ui_class_title">Class year</string>
     <string name="ui_major_title">Major</string>
     <string name="ui_time_title">Major</string>
 
-    <string name="action_settings">Settings</string>
+    <!-- Buttons for UI -->
+    <string name="ui_change_button">CHANGE</string>
+    <string name="ui_save_button">SAVE</string>
+    <string name="ui_cancel_button">CANCEL</string>
+    <string name="ui_ok_button">OK</string>
+
+    <!-- EditView for UI -->
+    <string name="ui_edit_name">Your Name</string>
+    <string name="ui_edit_email">Your Blitz</string>
+    <string name="ui_edit_phone">Your Phone Number</string>
+    <string name="ui_edit_class">eg. 2017</string>
+    <string name="ui_edit_major">Your Major</string>
+
+    <string-array name="array_class">
+        <item>2017</item>
+        <item>2018</item>
+        <item>2019</item>
+        <item>2020</item>
+        <item>Thayer</item>
+        <item>Geisel</item>
+        <item>Tuck</item>
+        <item>Grad</item>
+        <item>Faculty</item>
+        <item>Visitor</item>
+        <item>Others</item>
+    </string-array>
+
+    <!-- Constants for photo picker -->
+    <string name="ui_photo_picker">"Select profile image"</string>
+    <string-array name="ui_photo_picker_list">
+        <item>Take picture from camera</item>
+        <item>Take picture from gallery</item>
+    </string-array>
+
 
 
 
