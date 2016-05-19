@@ -2,11 +2,88 @@
 <items version="2" >
 
     <item
-        jar="/Users/edreichua/Desktop/Spring16/COSC65/MealBuddy/MealBuddy/app/build/intermediates/exploded-aar/com.soundcloud.android/android-crop/1.0.1/jars/classes.jar"
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/support-v13/21.0.3/jars/libs/internal_impl-21.0.3.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="0dcc55e70f7ebf7238fe2ec53f662eb378ab2668">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-f4255c8793bdd92904a7a3d956a7f27520ebf524.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/internal_impl-23.3.0-2add63190510a05e551b67d3c20024bcad1ebf84.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/support-v13/21.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="2c2071dcaf7a008c3b01a6381a33be55396bab09">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-e32a335605943208d383cb030328b3326f28f904.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-49caf0b2fb8a8dd59501f5d744bab22a7f5c3bb8.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/support-annotations-23.3.0-bb2d073a7bb3dc751204fc2eb56a0d1653adf113.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/preference-v7/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8f7b5e4b9523793c32db2190fdc3ed1093b7e560">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-4df2026177312e91258bb7ec6df81e76c224a1b4.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-02042641aa2e18472576366647f72e589a6b92a0.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-6f28422e99efd5e7eb5c0462f8a20341a8e59fc1.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-2f5a575c6e6a4d9015a0ca7124558d9e525bb61c.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-a74ecb2c168a0db49e26418fe595ea4786d56ee7.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-05aecf21909ede9f61211a27b904b51a7ed754c1.jar" />
+    </item>
+    <item
+        jar="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/exploded-aar/com.soundcloud.android/android-crop/1.0.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.2"
         sha1="11a65cf2b30c192b38a881d626fa771a78a2293d">
-        <dex dex="/Users/edreichua/Desktop/Spring16/COSC65/MealBuddy/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-ddceced109720f63e99e1d2551ce2145bbf858e4.jar" />
+        <dex dex="/Users/seancann/Documents/dartmouth/0 cs 65/final project/MealBuddy/app/build/intermediates/pre-dexed/debug/classes-8759a300ff4e9e95771095e10a379ad7c3905d3c.jar" />
     </item>
 
 </items>

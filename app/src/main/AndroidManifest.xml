@@ -45,6 +45,14 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".RequestPrefActivity" >
+            <intent-filter>
+                <action android:name="com.example.mealbuddy.mealbuddy.RequestPrefActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
 
     </application>

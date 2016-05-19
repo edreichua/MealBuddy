@@ -77,6 +77,28 @@
         <item>Others</item>
     </string-array>
 
+    <!-- Spinners for request preferences -->
+
+    <string-array name="request_class_year_spinner_list">
+        <item>No preference</item>
+        <item>2020</item>
+        <item>2019</item>
+        <item>2018</item>
+        <item>2017</item>
+        <item>2016</item>
+        <item>Grad student</item>
+        <item>Faculty/staff</item>
+    </string-array>
+
+    <string-array name="request_field_of_study_spinner_list">
+        <item>No preference</item>
+        <item>Arts</item>
+        <item>Humanities</item>
+        <item>Interdisciplinary</item>
+        <item>Sciences</item>
+        <item>Social Sciences</item>
+    </string-array>
+
     <!-- Constants for photo picker -->
     <string name="ui_photo_picker">"Select profile image"</string>
     <string-array name="ui_photo_picker_list">
