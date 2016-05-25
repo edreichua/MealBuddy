@@ -81,6 +81,8 @@ public class MainActivity extends AppCompatActivity
             frag = new NotificationFragment();
         } else if (id == R.id.nav_about) {
             frag = new AboutFragment();
+        } else if (id == R.id.nav_menu) {
+            frag = new MenuFragment();
         }
 
 

@@ -14,7 +14,7 @@ import android.webkit.WebViewClient;
  * Created by songtaeho16 on 5/25/16.
  */
 public class MenuFragment extends Fragment {
-    private WebView web;
+    private static WebView web;
     private String menuUrl = "http://129.170.134.38:9088";
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
