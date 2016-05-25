@@ -39,6 +39,16 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".MenuActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name=".MenuActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".UserProfileActivity" >
             <intent-filter>
                 <action android:name="com.example.mealbuddy.mealbuddy.UserProfileActivity" />

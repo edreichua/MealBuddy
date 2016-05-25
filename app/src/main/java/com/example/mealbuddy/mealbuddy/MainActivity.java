@@ -72,6 +72,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment frag = null;
 
+        if(id == R.id.nav_menu) {
+            Intent intent = new Intent(this, MenuActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
         // Find the appropriate fragment
         if (id == R.id.nav_main) {
             frag = new MainFragment();
@@ -81,8 +87,6 @@ public class MainActivity extends AppCompatActivity
             frag = new NotificationFragment();
         } else if (id == R.id.nav_about) {
             frag = new AboutFragment();
-        } else if (id == R.id.nav_menu) {
-            frag = new MenuFragment();
         }
 
 
