@@ -37,9 +37,9 @@ public class GcmIntentService extends IntentService {
                 // Get the row ID to perform deleting
                 long rowid = Long.parseLong(extras.getString("message"));
 
-                // Delete entry from the database
-                ExerciseEntryDbHelper dbHelper = new ExerciseEntryDbHelper(this);
-                dbHelper.removeEntry(rowid);
+//                // Delete entry from the database
+//                ExerciseEntryDbHelper dbHelper = new ExerciseEntryDbHelper(this);
+//                dbHelper.removeEntry(rowid);
             }
         }
 
