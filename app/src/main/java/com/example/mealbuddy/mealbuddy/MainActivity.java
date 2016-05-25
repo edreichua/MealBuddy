@@ -83,6 +83,7 @@ public class MainActivity extends AppCompatActivity
             frag = new AboutFragment();
         } else if (id == R.id.nav_menu) {
             frag = new MenuFragment();
+            
         }
 
 
