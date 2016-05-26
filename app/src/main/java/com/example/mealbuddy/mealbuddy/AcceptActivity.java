@@ -19,7 +19,6 @@ public class AcceptActivity extends AppCompatActivity {
     public void onYesClick(View view) {
         finish();
     }
-
     public void onNoClick(View view) {
         finish();
     }

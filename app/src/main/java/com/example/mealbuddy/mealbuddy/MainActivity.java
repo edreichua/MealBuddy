@@ -1,30 +1,43 @@
 package com.example.mealbuddy.mealbuddy;
 
-import android.app.FragmentManager;
-import android.os.Bundle;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.MenuItem;
-
+import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+
+import com.facebook.AccessToken;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    protected static NotificationDbHelpher datasource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        datasource = new NotificationDbHelpher(this);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -53,6 +66,11 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
+    public void getMeal(View view) {
+        Intent intent = new Intent(this, RequestPrefActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -68,6 +86,16 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment frag = null;
 
+        if(id == R.id.nav_menu) {
+            Intent intent = new Intent(this, MenuActivity.class);
+            startActivity(intent);
+            return true;
+        } else if (id == R.id.hours) {
+            Intent intent = new Intent(this, HoursActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
         // Find the appropriate fragment
         if (id == R.id.nav_main) {
             frag = new MainFragment();
@@ -77,6 +105,11 @@ public class MainActivity extends AppCompatActivity
             frag = new NotificationFragment();
         } else if (id == R.id.nav_about) {
             frag = new AboutFragment();
+        } else if (id == R.id.logout) {
+            Log.d("LOGGED IN?: ", String.valueOf(AccessToken.getCurrentAccessToken() != null));
+            LoginManager.getInstance().logOut();
+            finish();
+            return true;
         }
 
 
