@@ -88,6 +88,10 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
             return true;
+        } else if (id == R.id.hours) {
+            Intent intent = new Intent(this, HoursActivity.class);
+            startActivity(intent);
+            return true;
         }
 
         // Find the appropriate fragment
