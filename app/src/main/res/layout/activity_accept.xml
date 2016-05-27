@@ -104,7 +104,7 @@
         android:text="Major: Culinary Arts"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/major2"
@@ -116,11 +116,11 @@
         android:text="Major: Idiotic Arts"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/class1"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="430dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
@@ -128,11 +128,11 @@
         android:text="Class: 2017"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/class2"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="430dp"
         android:layout_marginStart="220dp"
         android:layout_marginLeft="220dp"
         android:layout_width="wrap_content"
@@ -140,10 +140,10 @@
         android:text="Class: 2017"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:textSize="16sp"/>
 
     <LinearLayout
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="460dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_width="160dp"
@@ -156,12 +156,12 @@
             android:text="Email: spongebob.squarepants.17@dartmouth.edu"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="460dp"
         android:layout_marginStart="220dp"
         android:layout_marginLeft="20dp"
         android:layout_width="160dp"
@@ -174,7 +174,7 @@
             android:text="Email: patrick.star.17@dartmouth.edu"
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:textSize="16sp"/>
 
     </LinearLayout>
 
@@ -187,7 +187,7 @@
         android:textColor="#FFFFFF"
         android:backgroundTint="@color/colorPrimary"
         android:text="OK"
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:onClick="onOKClick"/>
 
 </RelativeLayout>
