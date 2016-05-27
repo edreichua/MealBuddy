@@ -16,10 +16,7 @@ public class AcceptActivity extends AppCompatActivity {
         setContentView(R.layout.activity_accept);
     }
 
-    public void onYesClick(View view) {
-        finish();
-    }
-    public void onNoClick(View view) {
+    public void onOKClick(View view) {
         finish();
     }
 }
