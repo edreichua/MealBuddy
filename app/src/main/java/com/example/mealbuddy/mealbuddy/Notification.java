@@ -34,7 +34,7 @@ public class Notification {
 
     static {
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for(int i = 0; i < PRIME.length - 1; i++) {
+        for(int i = 0; i < PRIME.length; i++) {
             map.put(PRIME[i], i);
         }
 
