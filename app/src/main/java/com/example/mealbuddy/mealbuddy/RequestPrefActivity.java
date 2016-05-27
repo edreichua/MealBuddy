@@ -4,9 +4,9 @@ package com.example.mealbuddy.mealbuddy;
  * Created by seancann on 4/19/2016.
  */
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -49,6 +49,11 @@ public class RequestPrefActivity extends AppCompatActivity {
         // Get the ids of the buttons
         submitButton = (Button) findViewById(R.id.button_submit);
         cancelButton = (Button) findViewById(R.id.button_cancel);
+
+        // Sets the font of the buttons
+        Typeface customFont = Typeface.createFromAsset(getAssets(), "fonts/Ubuntu-B.ttf");
+        submitButton.setTypeface(customFont);
+        cancelButton.setTypeface(customFont);
 
         // Get the ids of the location checkboxes
         loc1=(CheckBox)findViewById(R.id.locCheckBox1);

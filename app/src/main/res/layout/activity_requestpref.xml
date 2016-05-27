@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fragment_start"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorLightBackground">
 
     <!-- Allow for scroll view -->
     <ScrollView
@@ -18,92 +21,90 @@
 
             <!-- Title -->
 
-            <TextView
+            <com.example.mealbuddy.mealbuddy.CustomTextViewBold
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="10dp"
-                android:textSize="35dp"
+                android:textSize="45dp"
                 android:textColor="@color/colorPrimary"
-                android:text="Meal Preferences" >
-            </TextView>
+                android:text="Random Meal" />
 
 
             <!-- Class year -->
 
-            <TextView
+            <com.example.mealbuddy.mealbuddy.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:paddingTop="20dp"
-                android:textStyle="bold"
+                android:textSize="18dp"
                 android:textColor="@color/colorPrimary"
-                android:text="Preferred class year of my future friend:" >
-            </TextView>
+                android:text="Class year of your future friend:" />
 
             <Spinner
                 android:id="@+id/spinnerClassYear"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:background="@color/color3a"
                 android:entries="@array/request_class_year_spinner_list" >
             </Spinner>
 
 
             <!-- Field of study -->
 
-            <TextView
+            <com.example.mealbuddy.mealbuddy.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:paddingTop="20dp"
-                android:textStyle="bold"
+                android:textSize="18dp"
                 android:textColor="@color/colorPrimary"
-                android:text="Preferred field of study of my future friend:" >
-            </TextView>
+                android:text="Field of study of your future friend:" />
 
             <Spinner
                 android:id="@+id/spinnerFieldOfStudy"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:background="@color/color3a"
                 android:entries="@array/request_field_of_study_spinner_list" >
             </Spinner>
 
 
             <!-- Date -->
 
-            <TextView
+            <com.example.mealbuddy.mealbuddy.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:paddingTop="20dp"
-                android:textStyle="bold"
+                android:textSize="18dp"
                 android:textColor="@color/colorPrimary"
-                android:text="Day I want to grab a meal:" >
-            </TextView>
+                android:text="Day of meal:" />
 
-            <TextView
+            <com.example.mealbuddy.mealbuddy.CustomTextView
                 android:id="@+id/dateTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Please pick a day"
-                android:textSize="20dp" />
+                android:textColor="@color/color3c"
+                android:text="Choose a day"
+                android:textSize="35dp" />
 
 
             <!-- Times -->
 
-            <TextView
+            <com.example.mealbuddy.mealbuddy.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:paddingTop="40dp"
-                android:textStyle="bold"
+                android:textSize="18dp"
                 android:textColor="@color/colorPrimary"
-                android:text="Class periods/times I'm available:" >
-            </TextView>
+                android:text="When you're available:" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -113,44 +114,66 @@
                     android:id="@+id/lunchTimes"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginLeft="30dp">
 
-                    <TextView
+                    <com.example.mealbuddy.mealbuddy.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="LUNCH" >
-                    </TextView>
+                        android:textSize="18dp"
+                        android:textColor="@color/color3c"
+                        android:text="LUNCH" />
 
                     <CheckBox
                         android:id="@+id/timeCheckBox1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="9Ls"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="false" />
                     <CheckBox
                         android:id="@+id/timeCheckBox2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="10s"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/timeCheckBox3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="11s"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/timeCheckBox4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="12s"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/timeCheckBox5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="2s"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
 
                 </LinearLayout>
@@ -162,48 +185,73 @@
                     android:orientation="vertical"
                     android:layout_marginLeft="200dp">
 
-                    <TextView
+                    <com.example.mealbuddy.mealbuddy.CustomTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:text="DINNER" >
-                    </TextView>
+                        android:textSize="18dp"
+                        android:textColor="@color/color3c"
+                        android:text="DINNER" />
 
                     <CheckBox
                         android:id="@+id/timeCheckBox6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5:00-6:00pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/timeCheckBox7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5:30-6:30pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/timeCheckBox8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="6:00-7:00pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/timeCheckBox9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="6:30-7:30pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/timeCheckBox10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="7:00-8:00pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/timeCheckBox11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="7:30-8:30pm"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                 </LinearLayout>
 
@@ -212,15 +260,14 @@
 
             <!-- Locations -->
 
-            <TextView
+            <com.example.mealbuddy.mealbuddy.CustomTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:paddingTop="20dp"
-                android:textStyle="bold"
+                android:textSize="18dp"
                 android:textColor="@color/colorPrimary"
-                android:text="Places where I want to eat:" >
-            </TextView>
+                android:text="Where you want to eat:" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -229,25 +276,38 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginLeft="30dp">
 
                     <CheckBox
                         android:id="@+id/locCheckBox1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Collis"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/locCheckBox2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="KAF"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/locCheckBox3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Novack"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
 
                 </LinearLayout>
@@ -263,18 +323,30 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Foco"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/locCheckBox5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="The Hop"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
                     <CheckBox
                         android:id="@+id/locCheckBox6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Off campus"
+                        android:textSize="15dp"
+                        android:textColor="@color/color3c"
+                        android:textStyle="bold"
+                        android:theme="@style/OrangeCheck"
                         android:layout_centerHorizontal="true" />
 
                 </LinearLayout>
@@ -298,6 +370,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_weight="1"
+                    android:textSize="25dp"
+                    android:background="@color/color4a"
+                    android:textColor="@color/color1e"
                     android:text="Cancel" >
                 </Button>
 
@@ -307,6 +382,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="40dp"
                     android:layout_weight="1"
+                    android:textSize="25dp"
+                    android:background="@color/color2a"
+                    android:textColor="@color/color1e"
                     android:text="Submit!" >
                 </Button>
 
