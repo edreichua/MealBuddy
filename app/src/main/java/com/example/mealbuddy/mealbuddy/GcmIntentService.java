@@ -35,10 +35,13 @@ public class GcmIntentService extends IntentService {
         if (extras != null && !extras.isEmpty()) {
 
             // Make sure the message type is "gcm"
+            // Make sure the message type is "gcm"
+            if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
                 String str = extras.getString("message");
-                Log.d("Testing1",str);
+                Log.d("Testing1", str);
                 showToast(str);
                 MainActivity.datasource.insertNotification(new Notification(str));
+            }
         }
 
         // Finish the service intent, while keeping device awake
