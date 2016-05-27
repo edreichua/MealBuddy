@@ -88,7 +88,7 @@
         <item>2017</item>
         <item>2016</item>
         <item>Grad student</item>
-        <item>Faculty/staff</item>
+        <item>Faculty or Staff</item>
     </string-array>
 
     <string-array name="request_field_of_study_spinner_list">

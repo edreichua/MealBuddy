@@ -90,6 +90,8 @@ public class Notification {
 
     public String convertToTime(String time) {
         int prime = Integer.parseInt(time);
+        Log.d("Time",time);
+        Log.d("Prime", prime+"");
         int index = PRIME_INDEX.get(prime);
 
         return TIME[index];
