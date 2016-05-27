@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity
             getFragmentManager().beginTransaction().
                     add(R.id.content_frame, frag).commit();
         }
+
+        // Register device with Google Cloud Messaging
+        new GcmRegistrationAsyncTask(this).execute();
     }
 
     @Override

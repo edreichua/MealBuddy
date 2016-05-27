@@ -1,5 +1,7 @@
 package com.example.mealbuddy.mealbuddy;
 
+import android.util.Log;
+
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -65,6 +67,12 @@ public class Notification {
     public String[] parseInfoString(String informationString) {
         String[] parsed = informationString.split("/");
 
+        Log.d("parsed length: ", String.valueOf(parsed.length));
+
+        for(int i = 0; i < parsed.length; i++) {
+            Log.d("parse content", parsed[i]);
+        }
+
         parsed[8] = convertToDate(parsed[8]);
         parsed[9] = convertToTime(parsed[9]);
         parsed[10] = convertToLocation(parsed[10]);
@@ -81,14 +89,14 @@ public class Notification {
     }
 
     public String convertToTime(String time) {
-        int prime = Integer.getInteger(time);
+        int prime = Integer.parseInt(time);
         int index = PRIME_INDEX.get(prime);
 
         return TIME[index];
     }
 
     public String convertToLocation(String location) {
-        int prime = Integer.getInteger(time);
+        int prime = Integer.parseInt(location);
         int index = PRIME_INDEX.get(prime);
 
         return LOCATION[index];

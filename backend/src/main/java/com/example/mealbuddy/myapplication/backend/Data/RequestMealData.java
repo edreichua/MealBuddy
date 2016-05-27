@@ -15,29 +15,40 @@ public class RequestMealData {
     public static final String FIELD_NAME_NAME = "name";
     public static final String FIELD_NAME_CLASSYEAR = "classyear";
     public static final String FIELD_NAME_MAJOR = "major";
+    public static final String FIELD_NAME_PREF_CLASSYEAR = "pref_classyear";
+    public static final String FIELD_NAME_PREF_MAJOR = "pref_major";
     public static final String FIELD_NAME_EMAIL = "email";
     public static final String FIELD_NAME_DATE = "date";
     public static final String FIELD_NAME_TIME = "time";
     public static final String FIELD_NAME_LOCATION = "location";
     public static final String FIELD_NAME_REGID = "regid";
+    public static final String FIELD_NAME_STATUS = "status";
+
+
 
     // Components of entity
-    public String mID, mName, mClassYear, mMajor, mEmail, mDate, mTime, mLocation, mRegId;
+    public String mID, mName, mClassYear, mMajor, mPrefClassYear, mPrefMajor,
+            mEmail, mDate, mRegId, mStatus;
+    public long mTime, mLocation;
 
     // Constructor for entity
-    public RequestMealData(String _id, String _name, String _classyear, String _major, String _email,
-                           String _date, String _time, String _location, String _regid) {
+    public RequestMealData(String _id, String _name, String _classyear, String _major, String _prefclassyear,
+                           String _prefmajor, String _email, String _date, long _time, long _location,
+                           String _regid, String _status) {
 
         // Initialize parameters
         mID = _id;
         mName = _name;
         mClassYear = _classyear;
         mMajor = _major;
+        mPrefClassYear = _prefclassyear;
+        mPrefMajor = _prefmajor;
         mEmail = _email;
         mDate = _date;
         mTime = _time;
         mLocation = _location;
         mRegId = _regid;
+        mStatus = _status;
 
     }
 }

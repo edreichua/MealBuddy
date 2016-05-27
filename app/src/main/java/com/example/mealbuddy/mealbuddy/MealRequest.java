@@ -1,30 +1,89 @@
 package com.example.mealbuddy.mealbuddy;
 
-import java.util.ArrayList;
-
 /**
  * Created by seancann on 4/19/2016.
  */
 public class MealRequest {
+    public static final int[] PRIME = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31};
+
     private Long id;
-    private String mClassYearPref;    // Preference for class year of future friend
-    private String mFieldOfStudyPref; // Preference for field of study of future friend
-    private long mDate;               // Day of availability
-    private ArrayList<Integer> mTimeList;     // List of available times
-    private ArrayList<Integer> mLocationList; // List of eating locations
+    private String mName;
+    private String myClassYear;
+    private String myMajor;
+
+    private String mClassYearPref;            // Preference for class year of future friend
+    private String mFieldOfStudyPref;         // Preference for field of study of future friend
+    private String mEmail;
+    private long mDate;                       // Day of availability
+    private long mTime;                        // List of available times
+    private long mLocation;                    // List of eating locations
+    private String mRegId;
+    private int mStatus;
 
     // Constructor
     MealRequest(){
-        mLocationList = new ArrayList<>();
-        mTimeList = new ArrayList<>();
+        Globals.id = (int) ((Math.random())*(Integer.MAX_VALUE));
+        this.id = Globals.id;
+        this.mTime = 1;
+        this.mLocation = 1;
+        this.mRegId = Globals.regID;
+        this.mStatus = 0;
     }
-    
+
+    // Setter and Getter for regid
+    public void setmRegId(String id) {
+        this.mRegId = id;
+    }
+    public String getmRegId() {
+        return mRegId;
+    }
+
     // Setter and Getter for id
     public void setmId(long id) {
         this.id = id;
     }
     public long getmId() {
         return id;
+    }
+
+    // Setter and Getter for name
+    public void setmName(String name) {
+        this.mName = name;
+    }
+    public String getmName() {
+        return mName;
+    }
+
+    // Setter and Getter for class year
+    public void setMyClassYear(String myClassYear) {
+        this.myClassYear = myClassYear;
+    }
+    public String getMyClassYear() {
+        return myClassYear;
+    }
+
+    // Setter and Getter for major
+    public void setMyMajor(String myMajor) {
+        this.myMajor = myMajor;
+    }
+    public String getMyMajor() {
+        return myMajor;
+    }
+
+    // Setter and Getter for email
+    public void setmEmail(String Email) {
+        this.mEmail = Email;
+    }
+    public String getmEmail() {
+        return mEmail;
+    }
+
+    // Setter and Getter for status
+    public void setmStatus(int status) {
+        this.mStatus = status;
+    }
+    public int getmStatus() {
+        return mStatus;
     }
 
     // Setter and Getter for InputType
@@ -47,18 +106,16 @@ public class MealRequest {
     public void setmDate(long mDate) {
         this.mDate = mDate;
     }
-    public long getmDateTime() {
+    public long getmDate() {
         return mDate;
     }
 
     // Setter and Getter for Time List
-    public void setmTimeList(ArrayList<Integer> mTimeList) { this.mTimeList = mTimeList; }
-    public void addmTimeList(Integer mTime) { mTimeList.add(mTime); }
-    public ArrayList<Integer> getmTimeList() { return mTimeList; }
+    public void addmTime(long mTime) { this.mTime *= mTime; }
+    public long getmTime() { return mTime; }
 
     // Setter and Getter for Location List
-    public void setmLocationList(ArrayList<Integer> mLocationList) { this.mLocationList = mLocationList; }
-    public void addmLocationList(Integer mLocation) { mLocationList.add(mLocation); }
-    public ArrayList<Integer> getmLocationList() { return mLocationList; }
+    public void addmLocation(long mLocation) { this.mLocation *= mLocation; }
+    public long getmLocation() { return mLocation; }
 
 }

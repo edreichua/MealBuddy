@@ -47,7 +47,7 @@ public class GcmRegistrationAsyncTask extends AsyncTask<Void, Void, String> {
 
             // Register the device with sender ID
             String regId = gcm.register(Globals.SENDER_ID);
-            message = "Device registered, registration ID=" + regId;
+            message = "Device registered";
             Log.d("Testing", "Message: " + message);
 
             // Execute the registration
@@ -60,7 +60,7 @@ public class GcmRegistrationAsyncTask extends AsyncTask<Void, Void, String> {
 
             // Print error message if registration fails
             ex.printStackTrace();
-            message = "Error: " + ex.getMessage();
+            message = "Error connecting device";
         }
         return message;
     }
