@@ -1,6 +1,5 @@
 package com.example.mealbuddy.mealbuddy;
 
-import android.app.Fragment;
 import android.app.ListFragment;
 import android.content.AsyncTaskLoader;
 import android.content.Context;
@@ -10,14 +9,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -56,24 +52,23 @@ public class NotificationFragment extends ListFragment {
         NotificationLoader loader = new NotificationLoader(getActivity());
 
         //List of Notifications
-        //values = loader.loadInBackground();
-        values = new ArrayList<Notification>();
+        values = loader.loadInBackground();
+//        values = new ArrayList<Notification>();
+//
+//        Notification notification = new Notification();
+//        notification.setLocation("Collis");
+//        notification.setDate("5 20 2016");
+//        notification.setClass1("2017");
+//        notification.setClass2("2018");
+//        notification.setEmail1("fuck@fuckyou.com");
+//        notification.setEmail2("shit@fuckyou.com");
+//        notification.setMajor1("cs");
+//        notification.setMajor2("film");
+//        notification.setName1("fucktard");
+//        notification.setName2("shit face");
+//        notification.setTime("morning");
 
-        Notification notification = new Notification();
-        notification.setLocation("Collis");
-        notification.setDate("5 20 2016");
-
-        Notification notification2 = new Notification();
-        notification2.setLocation("Foco");
-        notification2.setDate("5 21 2016");
-
-        Notification notification3 = new Notification();
-        notification3.setLocation("Hop");
-        notification3.setDate("5 22 2016");
-
-        values.add(notification);
-        values.add(notification2);
-        values.add(notification3);
+//        values.add(notification);
         adapter = new NotificationAdapter(getActivity(), values);
 
         setListAdapter(adapter);
