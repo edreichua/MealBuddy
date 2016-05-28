@@ -12,8 +12,8 @@
     <string name="ui_misc_title">Misc.</string>
 
     <!-- Preference Text for UI-->
-    <string name="ui_pref_profile">Name, Email, Class, etc</string>
-    <string name="ui_pref_profile_comment">User Profile</string>
+    <string name="ui_pref_profile">User Profile</string>
+    <string name="ui_pref_profile_comment">Name, Email, Class, etc</string>
 
     <string name="ui_pref_contact">Contact Sharing</string>
     <string name="ui_pref_contact_comment">Allow your match to view contact information</string>
@@ -88,7 +88,7 @@
         <item>2017</item>
         <item>2016</item>
         <item>Grad student</item>
-        <item>Faculty/staff</item>
+        <item>Faculty or Staff</item>
     </string-array>
 
     <string-array name="request_field_of_study_spinner_list">

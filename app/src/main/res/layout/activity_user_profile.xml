@@ -83,7 +83,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:drawSelectorOnTop="true"
-                android:entries="@array/array_class"/>
+                android:entries="@array/request_class_year_spinner_list"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -103,12 +103,12 @@
                 android:text="@string/ui_major_title" >
             </TextView>
 
-            <EditText
-                android:inputType="text"
+            <Spinner
                 android:id="@+id/edit_major"
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/ui_edit_major" />
+                android:drawSelectorOnTop="true"
+                android:entries="@array/request_field_of_study_spinner_list"/>
 
             <!-- email section-->
             <TextView

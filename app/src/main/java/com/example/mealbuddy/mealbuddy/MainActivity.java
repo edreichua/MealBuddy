@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -54,6 +55,9 @@ public class MainActivity extends AppCompatActivity
             getFragmentManager().beginTransaction().
                     add(R.id.content_frame, frag).commit();
         }
+
+        // Register device with Google Cloud Messaging
+        new GcmRegistrationAsyncTask(this).execute();
     }
 
     @Override
@@ -69,6 +73,16 @@ public class MainActivity extends AppCompatActivity
     public void getMeal(View view) {
         Intent intent = new Intent(this, RequestPrefActivity.class);
         startActivity(intent);
+    }
+
+    public void getMealWithFriend(View view) {
+        Toast.makeText(getApplicationContext(), "Feature coming up soon",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    public void checkFriend(View view) {
+        Toast.makeText(getApplicationContext(), "Feature coming up soon",
+                Toast.LENGTH_SHORT).show();
     }
 
     @Override

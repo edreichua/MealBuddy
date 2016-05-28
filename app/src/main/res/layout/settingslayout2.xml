@@ -1,0 +1,24 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <com.example.mealbuddy.mealbuddy.CustomTextView
+        android:id="@+android:id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="12dp"
+        android:textColor="@color/color1d"/>
+
+    <com.example.mealbuddy.mealbuddy.CustomTextView
+        android:id="@+android:id/summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="17dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="12dp"
+        android:textColor="@color/color2d" />
+
+</LinearLayout>

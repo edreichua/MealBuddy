@@ -23,6 +23,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.soundcloud.android.crop.Crop;
@@ -304,9 +305,11 @@ public class UserProfileActivity extends AppCompatActivity {
         EditText textPhone = (EditText) findViewById(R.id.edit_phone);
         textPhone.setText(prefs.getString("savedPhone", ""));
 
+        Spinner textYear = (Spinner) findViewById(R.id.edit_class);
+        textYear.setSelection(prefs.getInt("savedYearPos", 0));
 
-        EditText textMajor = (EditText) findViewById(R.id.edit_major);
-        textMajor.setText(prefs.getString("savedMajor", ""));
+        Spinner textMajor = (Spinner) findViewById(R.id.edit_major);
+        textMajor.setSelection(prefs.getInt("savedMajorPos", 0));
 
     }
 
@@ -328,10 +331,13 @@ public class UserProfileActivity extends AppCompatActivity {
         EditText textPhone = (EditText) findViewById(R.id.edit_phone);
         edit.putString("savedPhone", textPhone.getText().toString());
 
+        Spinner textYear = (Spinner) findViewById(R.id.edit_class);
+        edit.putString("savedYear", textYear.getSelectedItem().toString());
+        edit.putInt("savedYearPos", textYear.getSelectedItemPosition());
 
-        EditText textMajor = (EditText) findViewById(R.id.edit_major);
-        edit.putString("savedMajor", textMajor.getText().toString());
-
+        Spinner textMajor = (Spinner) findViewById(R.id.edit_major);
+        edit.putString("savedMajor", textMajor.getSelectedItem().toString());
+        edit.putInt("savedMajorPos", textMajor.getSelectedItemPosition());
 
         // Commit change into shared preference
         edit.commit();

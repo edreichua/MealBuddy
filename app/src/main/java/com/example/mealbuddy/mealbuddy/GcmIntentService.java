@@ -3,7 +3,10 @@ package com.example.mealbuddy.mealbuddy;
 import android.app.IntentService;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
@@ -32,18 +35,25 @@ public class GcmIntentService extends IntentService {
         if (extras != null && !extras.isEmpty()) {
 
             // Make sure the message type is "gcm"
+            // Make sure the message type is "gcm"
             if (GoogleCloudMessaging.MESSAGE_TYPE_MESSAGE.equals(messageType)) {
-
-                // Get the row ID to perform deleting
-                long rowid = Long.parseLong(extras.getString("message"));
-
-//                // Delete entry from the database
-//                ExerciseEntryDbHelper dbHelper = new ExerciseEntryDbHelper(this);
-//                dbHelper.removeEntry(rowid);
+                String str = extras.getString("message");
+                Log.d("Testing1", str);
+                showToast(str);
+                MainActivity.datasource.insertNotification(new Notification(str));
             }
         }
 
         // Finish the service intent, while keeping device awake
         GcmBroadcastReceiver.completeWakefulIntent(intent);
     }
+    protected void showToast(final String message) {
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/notification">
+
+    <com.example.mealbuddy.mealbuddy.CustomTextViewBold
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/notification_list_first_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:textColor="@color/color1e" >
+    </com.example.mealbuddy.mealbuddy.CustomTextViewBold>
+
+    <com.example.mealbuddy.mealbuddy.CustomTextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/notification_list_second_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:textColor="@color/color1e" >
+    </com.example.mealbuddy.mealbuddy.CustomTextView>
+
+
+</LinearLayout>
