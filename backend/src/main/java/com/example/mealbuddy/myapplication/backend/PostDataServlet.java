@@ -90,7 +90,7 @@ public class PostDataServlet extends HttpServlet {
                             entry.mEmail+"/"+entry.mDate+"/"+check.getCommonTime(mealMatch)+"/"+
                             check.getCommonLocation(mealMatch);
 
-                    msg.sendMessage(str);
+                    msg.sendMessage2Match(str,entry.mRegId,mealMatch.mRegId);
                 }
             }
 
