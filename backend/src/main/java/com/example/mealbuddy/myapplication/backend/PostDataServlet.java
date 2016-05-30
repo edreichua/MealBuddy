@@ -88,9 +88,10 @@ public class PostDataServlet extends HttpServlet {
 
                     // name, major class email name, major class email date time location
                     String str = mealMatch.mName +"/"+mealMatch.mMajor+"/"+mealMatch.mClassYear+
-                            "/"+mealMatch.mEmail+"/"+entry.mName+"/"+entry.mMajor+"/"+entry.mClassYear+"/"+
-                            entry.mEmail+"/"+entry.mDate+"/"+check.getCommonTime(mealMatch)+"/"+
-                            check.getCommonLocation(mealMatch);
+                            "/"+mealMatch.mEmail+"/"+mealMatch.mPhone+"/"+mealMatch.mDba+"/"+
+                            entry.mName+"/"+entry.mMajor+"/"+entry.mClassYear+"/"+
+                            entry.mEmail+"/"+entry.mPhone+"/"+entry.mDba+"/"+entry.mDate+"/"+
+                            check.getCommonTime(mealMatch)+"/"+ check.getCommonLocation(mealMatch);
                     //msg.sendMessage(str);
                     msg.sendMessage2Match(str,entry.mRegId,mealMatch.mRegId);
                 }

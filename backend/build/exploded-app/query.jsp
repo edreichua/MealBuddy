@@ -34,6 +34,8 @@
 			<TH>time</TH>
 			<TH>location</TH>
 			<TH>regID</TH>
+			<TH>phone</TH>
+			<TH>dba</TH>
 			<TH>status</TH>
 		</TR>
 		<%
@@ -53,6 +55,8 @@
         						<TD> <%= entry.mTime %></TD>
         						<TD> <%= entry.mLocation %></TD>
         						<TD> <%= entry.mRegId %></TD>
+        						<TD> <%= entry.mPhone %></TD>
+        						<TD> <%= entry.mDba %></TD>
         						<TD> <%= entry.mStatus %></TD>
         					</TR>
         			<% }
