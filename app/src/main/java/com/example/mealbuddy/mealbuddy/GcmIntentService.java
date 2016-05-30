@@ -58,7 +58,7 @@ public class GcmIntentService extends IntentService {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "You've been matched!", Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -73,10 +73,14 @@ public class GcmIntentService extends IntentService {
         bundle.putString(NotificationFragment.MAJOR1, mealNotification.getMajor1());
         bundle.putString(NotificationFragment.CLASS1, mealNotification.getClass1());
         bundle.putString(NotificationFragment.EMAIL1, mealNotification.getEmail1());
+        bundle.putString(NotificationFragment.PHONE1, mealNotification.getPhone1());
+        bundle.putString(NotificationFragment.DBA1, mealNotification.getDba1());
         bundle.putString(NotificationFragment.NAME2, mealNotification.getName2());
         bundle.putString(NotificationFragment.MAJOR2, mealNotification.getMajor2());
         bundle.putString(NotificationFragment.CLASS2, mealNotification.getClass2());
         bundle.putString(NotificationFragment.EMAIL2, mealNotification.getEmail2());
+        bundle.putString(NotificationFragment.PHONE2, mealNotification.getPhone2());
+        bundle.putString(NotificationFragment.DBA2, mealNotification.getDba2());
         bundle.putString(NotificationFragment.DATE, mealNotification.getDate());
         bundle.putString(NotificationFragment.TIME, mealNotification.getTime());
         bundle.putString(NotificationFragment.LOCATION, mealNotification.getLocation());
