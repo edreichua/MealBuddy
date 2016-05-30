@@ -45,7 +45,8 @@ public class GcmIntentService extends IntentService {
                 Log.d("Testing1", str);
                 showToast(str);
                 MealNotification newNotification = new MealNotification(str);
-                MainActivity.datasource.insertNotification(newNotification);
+                NotificationDbHelpher datasource = new NotificationDbHelpher(this);
+                datasource.insertNotification(newNotification);
                 displayNotification(newNotification);
             }
         }
@@ -91,6 +92,7 @@ public class GcmIntentService extends IntentService {
                 .setContentText(
                         getResources().getString(R.string.display_notification))
                 .setSmallIcon(R.mipmap.meal_buddy_logo)
+                .setAutoCancel(true)
                 .setContentIntent(contentIntent).build();
 
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
