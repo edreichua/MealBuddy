@@ -79,7 +79,11 @@ public class MainActivity extends AppCompatActivity
                 prefs.getString("savedEmail","").equals("")){
             Toast.makeText(getApplicationContext(), "Please complete your profile settings " ,
                     Toast.LENGTH_SHORT).show();
-        }else {
+        } else if(!prefs.getString("savedEmail", "").contains("@dartmouth.edu")){
+            Toast.makeText(getApplicationContext(), "Please specify your dartmouth.edu email address " ,
+                    Toast.LENGTH_SHORT).show();
+        }
+        else {
             Intent intent = new Intent(this, RequestPrefActivity.class);
             startActivity(intent);
         }

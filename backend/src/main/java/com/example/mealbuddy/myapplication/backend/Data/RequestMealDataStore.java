@@ -51,6 +51,8 @@ public class RequestMealDataStore {
         entity.setProperty(RequestMealData.FIELD_NAME_TIME, entry.mTime);
         entity.setProperty(RequestMealData.FIELD_NAME_LOCATION, entry.mLocation);
         entity.setProperty(RequestMealData.FIELD_NAME_REGID, entry.mRegId);
+        entity.setProperty(RequestMealData.FIELD_NAME_PHONE, entry.mPhone);
+        entity.setProperty(RequestMealData.FIELD_NAME_DBA, entry.mDba);
         entity.setProperty(RequestMealData.FIELD_NAME_STATUS, entry.mStatus);
 
 
@@ -187,6 +189,8 @@ public class RequestMealDataStore {
                 (Long) entity.getProperty(RequestMealData.FIELD_NAME_TIME),
                 (Long) entity.getProperty(RequestMealData.FIELD_NAME_LOCATION),
                 (String) entity.getProperty(RequestMealData.FIELD_NAME_REGID),
+                (String) entity.getProperty(RequestMealData.FIELD_NAME_PHONE),
+                (String) entity.getProperty(RequestMealData.FIELD_NAME_DBA),
                 (String) entity.getProperty(RequestMealData.FIELD_NAME_STATUS));
     }
 }

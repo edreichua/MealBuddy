@@ -60,9 +60,11 @@ public class PostDataServlet extends HttpServlet {
             long time = Long.parseLong((String) jObject.get(RequestMealData.FIELD_NAME_TIME));
             long location = Long.parseLong((String) jObject.get(RequestMealData.FIELD_NAME_LOCATION));
             String regid = (String) jObject.get(RequestMealData.FIELD_NAME_REGID);
+            String phone = (String) jObject.get(RequestMealData.FIELD_NAME_PHONE);
+            String dba = (String) jObject.get(RequestMealData.FIELD_NAME_DBA);
             String status = (String) jObject.get(RequestMealData.FIELD_NAME_STATUS);
             RequestMealData entry = new RequestMealData(id, name, classyear, major, prefclassyear,
-                    prefmajor, email, date, time, location, regid, status);
+                    prefmajor, email, date, time, location, regid, phone, dba, status);
 
             CheckMatch check = new CheckMatch(entry);
             RequestMealData mealMatch = check.findMatch(false);

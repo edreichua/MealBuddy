@@ -3,18 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-    <com.example.mealbuddy.mealbuddy.CustomTextView
+    <com.example.mealbuddy.mealbuddy.CustomTextViewBold
         android:id="@+android:id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textSize="35dp"
+        android:gravity="center_horizontal"
         android:textColor="@color/colorPrimary"/>
-
-    <com.example.mealbuddy.mealbuddy.CustomTextView
-        android:id="@+android:id/summary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="17dp"
-        android:textColor="@color/color2d" />
 
 </LinearLayout>
