@@ -9,7 +9,7 @@ import java.util.Map;
 /**
  * Created by songtaeho16 on 5/19/16.
  */
-public class Notification {
+public class MealNotification {
 
     //type of message eg. 0 for match, 1 for cancel, 2 for pending, 3 for warning (cancel too many times)
     private long id;
@@ -43,12 +43,12 @@ public class Notification {
 
 
     //constructor for cursorToNotification
-    public Notification() {
+    public MealNotification() {
 
     }
 
     //constructor for handling data parsing
-    public Notification(String informationString) {
+    public MealNotification(String informationString) {
         String[] parsed = parseInfoString(informationString);
 
         this.name1 = parsed[0];
