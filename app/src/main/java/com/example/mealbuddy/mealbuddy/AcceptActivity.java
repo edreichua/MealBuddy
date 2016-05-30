@@ -2,6 +2,7 @@ package com.example.mealbuddy.mealbuddy;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -33,6 +34,11 @@ public class AcceptActivity extends AppCompatActivity {
         String date = bundle.getString(NotificationFragment.DATE);
         String time = bundle.getString(NotificationFragment.TIME);
         String location = bundle.getString(NotificationFragment.LOCATION);
+
+        Log.d("phone1: ", phone1);
+        Log.d("dba1: ", dba1);
+        Log.d("phone2: ", phone2);
+        Log.d("dba2: ", dba2);
 
         TextView title = (TextView)findViewById(R.id.textView2);
         TextView name1Text = (TextView)findViewById(R.id.name1);
