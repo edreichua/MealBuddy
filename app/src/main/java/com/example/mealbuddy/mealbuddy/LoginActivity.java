@@ -74,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                                         //String firstName = object.getString("first_name");
                                         //String lastName = object.getString("last_name");
                                         String name = object.getString("name");
+                                        String id = object.getString("id");
 
 
                                         // Save into shared preferences
@@ -81,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                                         final SharedPreferences.Editor edit = prefs.edit();
 
                                         edit.putString("savedName", name);
+                                        edit.putString("fbId",id);
 
                                         // Commit change into shared preference
                                         edit.commit();

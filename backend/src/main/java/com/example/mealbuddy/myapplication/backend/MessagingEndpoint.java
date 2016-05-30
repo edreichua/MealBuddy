@@ -14,7 +14,9 @@ import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiNamespace;
 
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.logging.Logger;
 
 import javax.inject.Named;
@@ -41,7 +43,7 @@ import static com.example.mealbuddy.myapplication.backend.OfyService.ofy;
         )
 )
 public class MessagingEndpoint {
-    private static final Logger log = Logger.getLogger(MessagingEndpoint.class.getName());
+    private static final Logger log = Logger.getLogger("MessagingEndpoint");
 
     /**
      * Api Keys can be obtained from the google cloud console
@@ -65,6 +67,7 @@ public class MessagingEndpoint {
         Sender sender = new Sender(API_KEY);
         Message msg = new Message.Builder().addData("message", message).build();
         List<RegistrationRecord> records = ofy().load().type(RegistrationRecord.class).limit(10).list();
+        log.info("Entering for loop");
         for (RegistrationRecord record : records) {
             Result result = sender.send(msg, record.getRegId(), 5);
             if (result.getMessageId() != null) {
@@ -96,36 +99,50 @@ public class MessagingEndpoint {
             log.warning("Not sending message because it is empty");
             return;
         }
+
+        log.info("regid1: " + regid1);
+        log.info("regid2: " + regid2);
         // Crop longer messages
         if (message.length() > 1000) {
             message = message.substring(0, 1000) + "[...]";
         }
         Sender sender = new Sender(API_KEY);
         Message msg = new Message.Builder().addData("message", message).build();
-        List<RegistrationRecord> records = ofy().load().type(RegistrationRecord.class).limit(10).list();
-        for (RegistrationRecord record : records) {
-            if(record.getRegId().equals(regid1) || record.getRegId().equals(regid2)) {
-                Result result = sender.send(msg, record.getRegId(), 5);
-                if (result.getMessageId() != null) {
-                    log.info("Message sent to " + record.getRegId());
-                    String canonicalRegId = result.getCanonicalRegistrationId();
-                    if (canonicalRegId != null) {
-                        // If the regId changed, we have to update the datastore
-                        log.info("Registration Id changed for " + record.getRegId() + " updating to " + canonicalRegId);
-                        record.setRegId(canonicalRegId);
-                        ofy().save().entity(record).now();
-                    }
-                } else {
-                    String error = result.getErrorCodeName();
-                    if (error.equals(Constants.ERROR_NOT_REGISTERED)) {
-                        log.warning("Registration Id " + record.getRegId() + " no longer registered with GCM, removing from datastore");
-                        // If the device is no longer registered with Gcm, remove it from the datastore
-                        ofy().delete().entity(record).now();
-                    } else {
-                        log.warning("Error when sending message : " + error);
-                    }
-                }
-            }
-        }
+
+        log.info("sending msg to: " + regid1);
+        log.info("sending msg to: " + regid2);
+        sender.send(msg, regid1, 5);
+        sender.send(msg, regid2, 5);
+        //List<RegistrationRecord> records = ofy().load().type(RegistrationRecord.class).list();
+        //Set<String> alreadySent = new HashSet<>();
+        //log.info("Entering for loop");
+        //log.info("send " + message);
+//        for (RegistrationRecord record : records) {
+//            log.info(record.getRegId());
+//            if(!alreadySent.contains(record.getRegId()) &&
+//                    (record.getRegId().equals(regid1) || record.getRegId().equals(regid2))) {
+//                alreadySent.add(record.getRegId());
+//                Result result = sender.send(msg, record.getRegId(), 5);
+//                if (result.getMessageId() != null) {
+//                    log.info("Message sent to " + record.getRegId());
+//                    String canonicalRegId = result.getCanonicalRegistrationId();
+//                    if (canonicalRegId != null) {
+//                        // If the regId changed, we have to update the datastore
+//                        log.info("Registration Id changed for " + record.getRegId() + " updating to " + canonicalRegId);
+//                        record.setRegId(canonicalRegId);
+//                        ofy().save().entity(record).now();
+//                    }
+//                } else {
+//                    String error = result.getErrorCodeName();
+//                    if (error.equals(Constants.ERROR_NOT_REGISTERED)) {
+//                        log.warning("Registration Id " + record.getRegId() + " no longer registered with GCM, removing from datastore");
+//                        // If the device is no longer registered with Gcm, remove it from the datastore
+//                        ofy().delete().entity(record).now();
+//                    } else {
+//                        log.warning("Error when sending message : " + error);
+//                    }
+//                }
+//            }
+//        }
     }
 }
