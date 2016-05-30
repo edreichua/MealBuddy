@@ -1,6 +1,6 @@
 {
  "kind": "discovery#rpcDescription",
- "etag": "\"H01Z-1ikbwOw463Un2bFZHenx1g/IIHx9LLS9HsyHH13fzn5b1o-POI\"",
+ "etag": "\"H01Z-1ikbwOw463Un2bFZHenx1g/-zuB6awAXQFkGgTRpHJqLr5zfc4\"",
  "discoveryVersion": "v1",
  "id": "messaging:v1",
  "name": "messaging",
@@ -81,6 +81,31 @@
    },
    "parameterOrder": [
     "message"
+   ],
+   "scopes": [
+    "https://www.googleapis.com/auth/userinfo.email"
+   ]
+  },
+  "messaging.messagingEndpoint.sendMessage2Match": {
+   "id": "messaging.messagingEndpoint.sendMessage2Match",
+   "parameters": {
+    "message": {
+     "type": "string",
+     "required": true
+    },
+    "regid1": {
+     "type": "string",
+     "required": true
+    },
+    "regid2": {
+     "type": "string",
+     "required": true
+    }
+   },
+   "parameterOrder": [
+    "message",
+    "regid1",
+    "regid2"
    ],
    "scopes": [
     "https://www.googleapis.com/auth/userinfo.email"

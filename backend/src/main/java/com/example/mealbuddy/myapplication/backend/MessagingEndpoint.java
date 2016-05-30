@@ -88,4 +88,44 @@ public class MessagingEndpoint {
             }
         }
     }
+
+
+    public void sendMessage2Match(@Named("message") String message, @Named("regid1") String regid1,
+                                @Named("regid2") String regid2  ) throws IOException {
+        if (message == null || message.trim().length() == 0) {
+            log.warning("Not sending message because it is empty");
+            return;
+        }
+        // Crop longer messages
+        if (message.length() > 1000) {
+            message = message.substring(0, 1000) + "[...]";
+        }
+        Sender sender = new Sender(API_KEY);
+        Message msg = new Message.Builder().addData("message", message).build();
+        List<RegistrationRecord> records = ofy().load().type(RegistrationRecord.class).limit(10).list();
+        for (RegistrationRecord record : records) {
+            if(record.getRegId().equals(regid1) || record.getRegId().equals(regid2)) {
+                Result result = sender.send(msg, record.getRegId(), 5);
+                if (result.getMessageId() != null) {
+                    log.info("Message sent to " + record.getRegId());
+                    String canonicalRegId = result.getCanonicalRegistrationId();
+                    if (canonicalRegId != null) {
+                        // If the regId changed, we have to update the datastore
+                        log.info("Registration Id changed for " + record.getRegId() + " updating to " + canonicalRegId);
+                        record.setRegId(canonicalRegId);
+                        ofy().save().entity(record).now();
+                    }
+                } else {
+                    String error = result.getErrorCodeName();
+                    if (error.equals(Constants.ERROR_NOT_REGISTERED)) {
+                        log.warning("Registration Id " + record.getRegId() + " no longer registered with GCM, removing from datastore");
+                        // If the device is no longer registered with Gcm, remove it from the datastore
+                        ofy().delete().entity(record).now();
+                    } else {
+                        log.warning("Error when sending message : " + error);
+                    }
+                }
+            }
+        }
+    }
 }
