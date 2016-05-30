@@ -22,6 +22,7 @@
             <!-- Title -->
 
             <com.example.mealbuddy.mealbuddy.CustomTextViewBold
+                android:id="@+id/meal_request_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -35,6 +36,7 @@
             <!-- Class year -->
 
             <com.example.mealbuddy.mealbuddy.CustomTextView
+                android:id="@+id/meal_request_year"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -56,6 +58,7 @@
             <!-- Field of study -->
 
             <com.example.mealbuddy.mealbuddy.CustomTextView
+                android:id="@+id/meal_request_major"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"

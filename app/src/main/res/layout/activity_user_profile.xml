@@ -60,6 +60,7 @@
                 android:id="@+id/edit_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:editable="false"
                 android:hint="@string/ui_edit_name" />
 
             <!-- class section-->

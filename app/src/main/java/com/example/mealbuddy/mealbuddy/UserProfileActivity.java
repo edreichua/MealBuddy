@@ -298,6 +298,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
         EditText textName = (EditText) findViewById(R.id.edit_name);
         textName.setText(prefs.getString("savedName", ""));
+        textName.setEnabled(false);
 
         EditText textEmail = (EditText) findViewById(R.id.edit_email);
         textEmail.setText(prefs.getString("savedEmail", ""));

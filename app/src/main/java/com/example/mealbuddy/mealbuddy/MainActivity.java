@@ -3,6 +3,7 @@ package com.example.mealbuddy.mealbuddy;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -29,6 +30,8 @@ import com.facebook.login.widget.LoginButton;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     protected static NotificationDbHelpher datasource;
+
+    public static final String PREFS = "Profile_Info";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,13 +74,28 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void getMeal(View view) {
-        Intent intent = new Intent(this, RequestPrefActivity.class);
-        startActivity(intent);
+        SharedPreferences prefs = getSharedPreferences(PREFS, 0);
+        if(prefs.getString("savedPhone","").equals("") ||
+                prefs.getString("savedEmail","").equals("")){
+            Toast.makeText(getApplicationContext(), "Please complete your profile settings " ,
+                    Toast.LENGTH_SHORT).show();
+        }else {
+            Intent intent = new Intent(this, RequestPrefActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void getMealWithFriend(View view) {
-        Toast.makeText(getApplicationContext(), "Feature coming up soon",
-                Toast.LENGTH_SHORT).show();
+        SharedPreferences prefs = getSharedPreferences(PREFS, 0);
+        if(prefs.getString("savedPhone","").equals("") ||
+                prefs.getString("savedEmail","").equals("")){
+            Toast.makeText(getApplicationContext(), "Please complete your profile settings" +
+                            " and enable phone sharing" ,
+                    Toast.LENGTH_SHORT).show();
+        }else {
+            Intent intent = new Intent(this, SetupMealAvailabilityActivity.class);
+            startActivity(intent);
+        }
     }
 
     public void checkFriend(View view) {
@@ -108,13 +126,15 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(this, HoursActivity.class);
             startActivity(intent);
             return true;
+        }else if(id == R.id.nav_settings){
+            Intent intent = new Intent(this, UserProfileActivity.class);
+            startActivity(intent);
+            return true;
         }
 
         // Find the appropriate fragment
         if (id == R.id.nav_main) {
             frag = new MainFragment();
-        } else if (id == R.id.nav_settings) {
-            frag = new SettingsFragment();
         } else if (id == R.id.nav_notification) {
             frag = new NotificationFragment();
         } else if (id == R.id.nav_about) {

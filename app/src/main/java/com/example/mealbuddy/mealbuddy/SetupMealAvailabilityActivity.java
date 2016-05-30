@@ -1,16 +1,9 @@
 package com.example.mealbuddy.mealbuddy;
 
-/**
- * Created by seancann on 4/19/2016.
- */
-
-import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -21,16 +14,13 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 
-public class RequestPrefActivity extends AppCompatActivity {
+/**
+ * Created by edreichua on 5/30/16.
+ */
+public class SetupMealAvailabilityActivity extends AppCompatActivity {
 
     // For location and time preferences
     CheckBox loc1,loc2,loc3,loc4,loc5,loc6;
@@ -55,6 +45,7 @@ public class RequestPrefActivity extends AppCompatActivity {
 
 
         meal = new MealRequest();
+        meal.setmStatus(1);
 
         // initialize user profile
         SharedPreferences prefs = getSharedPreferences(PREFS, 0);
@@ -96,8 +87,18 @@ public class RequestPrefActivity extends AppCompatActivity {
         time11=(CheckBox)findViewById(R.id.timeCheckBox11);
 
         // Get the ids of the spinners
+        TextView title = (TextView) findViewById(R.id.meal_request_title);
+        title.setText("Eat with Friends");
         classYearSpinner=(Spinner) findViewById(R.id.spinnerClassYear);
+        classYearSpinner.setVisibility(View.GONE);
         fieldOfStudySpinner=(Spinner) findViewById(R.id.spinnerFieldOfStudy);
+        fieldOfStudySpinner.setVisibility(View.GONE);
+
+        TextView maj = (TextView) findViewById(R.id.meal_request_major);
+        maj.setVisibility(View.GONE);
+
+        TextView yr = (TextView) findViewById(R.id.meal_request_year);
+        yr.setVisibility(View.GONE);
 
         // Variables to deal with picking a day
         dateView = (TextView) findViewById(R.id.dateTextView);
@@ -119,8 +120,8 @@ public class RequestPrefActivity extends AppCompatActivity {
             public void onClick(View arg) {
 
                 // Get the preferred class year and field of study from the spinners
-                final String classYearText = classYearSpinner.getSelectedItem().toString();
-                final String fieldOfStudyText = fieldOfStudySpinner.getSelectedItem().toString();
+                final String classYearText = " ";
+                final String fieldOfStudyText = " ";
 
                 // Get the preferred date
 
@@ -226,7 +227,7 @@ public class RequestPrefActivity extends AppCompatActivity {
             }
         };
 
-        new DatePickerDialog(RequestPrefActivity.this, mDateListener,
+        new DatePickerDialog(SetupMealAvailabilityActivity.this, mDateListener,
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH)).show();
