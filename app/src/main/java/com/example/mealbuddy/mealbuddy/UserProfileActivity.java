@@ -313,6 +313,9 @@ public class UserProfileActivity extends AppCompatActivity {
         Spinner textMajor = (Spinner) findViewById(R.id.edit_major);
         textMajor.setSelection(prefs.getInt("savedMajorPos", 0));
 
+        CheckBox checkBox = (CheckBox) findViewById(R.id.contactsharingcheckbox);
+        checkBox.setChecked(prefs.getBoolean("isCheck",false));
+
     }
 
     /**
@@ -339,9 +342,13 @@ public class UserProfileActivity extends AppCompatActivity {
         edit.putInt("savedMajorPos", textMajor.getSelectedItemPosition());
 
         CheckBox checkBox = (CheckBox) findViewById(R.id.contactsharingcheckbox);
+
         if(checkBox.isChecked()){
             EditText textPhone = (EditText) findViewById(R.id.edit_phone);
             edit.putString("savedPhone", textPhone.getText().toString());
+            edit.putBoolean("isCheck",true);
+        }else{
+            edit.putBoolean("isCheck",false);
         }
         // Commit change into shared preference
         edit.commit();

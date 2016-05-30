@@ -24,13 +24,13 @@ public class AcceptActivity extends AppCompatActivity {
         String class1 = bundle.getString(NotificationFragment.CLASS1);
         String email1 = bundle.getString(NotificationFragment.EMAIL1);
         String phone1 = bundle.getString(NotificationFragment.PHONE1);
-        String dba1 = bundle.getString(NotificationFragment.EMAIL1);
+        String dba1 = bundle.getString(NotificationFragment.DBA1);
         String name2 = bundle.getString(NotificationFragment.NAME2);
         String major2 = bundle.getString(NotificationFragment.MAJOR2);
         String class2 = bundle.getString(NotificationFragment.CLASS2);
         String email2 = bundle.getString(NotificationFragment.EMAIL2);
         String phone2 = bundle.getString(NotificationFragment.PHONE2);
-        String dba2 = bundle.getString(NotificationFragment.EMAIL2);
+        String dba2 = bundle.getString(NotificationFragment.DBA2);
         String date = bundle.getString(NotificationFragment.DATE);
         String time = bundle.getString(NotificationFragment.TIME);
         String location = bundle.getString(NotificationFragment.LOCATION);
