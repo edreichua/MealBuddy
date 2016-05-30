@@ -17,10 +17,14 @@ public class MealNotification {
     private String major1;
     private String class1;
     private String email1;
+    private String phone1;
+    private String dba1;
     private String name2;
     private String major2;
     private String class2;
     private String email2;
+    private String phone2;
+    private String dba2;
     private String date;
     private String time;
     private String location;
@@ -55,13 +59,17 @@ public class MealNotification {
         this.major1 = parsed[1];
         this.class1 = parsed[2];
         this.email1 = parsed[3];
-        this.name2 = parsed[4];
-        this.major2 = parsed[5];
-        this.class2 = parsed[6];
-        this.email2 = parsed[7];
-        this.date = parsed[8];
-        this.time = parsed[9];
-        this.location = parsed[10];
+        this.phone1 = parsed[4];
+        this.dba1 = parsed[5];
+        this.name2 = parsed[6];
+        this.major2 = parsed[7];
+        this.class2 = parsed[8];
+        this.email2 = parsed[9];
+        this.phone2 = parsed[10];
+        this.dba2 = parsed[11];
+        this.date = parsed[12];
+        this.time = parsed[13];
+        this.location = parsed[14];
     }
 
     public String[] parseInfoString(String informationString) {
@@ -73,9 +81,9 @@ public class MealNotification {
             Log.d("parse content", parsed[i]);
         }
 
-        parsed[8] = convertToDate(parsed[8]);
-        parsed[9] = convertToTime(parsed[9]);
-        parsed[10] = convertToLocation(parsed[10]);
+        parsed[12] = convertToDate(parsed[12]);
+        parsed[13] = convertToTime(parsed[13]);
+        parsed[14] = convertToLocation(parsed[14]);
 
         return parsed;
     }
@@ -85,7 +93,7 @@ public class MealNotification {
         String month = date.substring(4, 6);
         String day = date.substring(6, 8);
 
-        return month + " " + day + " " + year;
+        return month + "/" + day + "/" + year;
     }
 
     public String convertToTime(String time) {
@@ -110,10 +118,14 @@ public class MealNotification {
     public String getMajor1() {return major1;}
     public String getClass1() {return class1;}
     public String getEmail1() {return email1;}
+    public String getPhone1() {return phone1;}
+    public String getDba1() {return dba1;}
     public String getName2() {return name2;}
     public String getMajor2() {return major2;}
     public String getClass2() {return class2;}
     public String getEmail2() {return email2;}
+    public String getPhone2() {return phone2;}
+    public String getDba2() {return dba2;}
     public String getDate() {return date;}
     public String getTime() {return time;}
     public String getLocation() {return location;}
@@ -123,10 +135,14 @@ public class MealNotification {
     public void setMajor1(String major1) {this.major1 = major1;}
     public void setClass1(String class1) {this.class1 = class1;}
     public void setEmail1(String email1) {this.email1 = email1;}
+    public void setPhone1(String phone1) {this.phone1 = phone1;}
+    public void setDba1(String dba1) {this.dba1 = dba1;}
     public void setName2(String name2) {this.name2 = name2;}
     public void setMajor2(String major2) {this.major2 = major2;}
     public void setClass2(String class2) {this.class2 = class2;}
     public void setEmail2(String email2) {this.email2 = email2;}
+    public void setPhone2(String phone2) {this.phone2 = phone2;}
+    public void setDba2(String dba2) {this.dba2 = dba2;}
     public void setDate(String date) {this.date = date;}
     public void setTime(String time) {this.time = time;}
     public void setLocation(String location) {this.location = location;}

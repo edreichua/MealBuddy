@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -32,10 +34,14 @@ public class NotificationFragment extends ListFragment {
     public static final String MAJOR1 = "major1";
     public static final String CLASS1 = "class1";
     public static final String EMAIL1 = "email1";
+    public static final String PHONE1 = "phone1";
+    public static final String DBA1 = "dba1";
     public static final String NAME2 = "name2";
     public static final String MAJOR2 = "major2";
     public static final String CLASS2 = "class2";
     public static final String EMAIL2 = "email2";
+    public static final String PHONE2 = "phone2";
+    public static final String DBA2 = "dba2";
     public static final String DATE = "date";
     public static final String TIME = "time";
     public static final String LOCATION = "location";
@@ -53,6 +59,7 @@ public class NotificationFragment extends ListFragment {
 
         //List of Notifications
         values = loader.loadInBackground();
+        Collections.reverse(values);
         adapter = new NotificationAdapter(getActivity(), values);
 
         setListAdapter(adapter);
@@ -75,10 +82,14 @@ public class NotificationFragment extends ListFragment {
         bundle.putString(MAJOR1, mealNotification.getMajor1());
         bundle.putString(CLASS1, mealNotification.getClass1());
         bundle.putString(EMAIL1, mealNotification.getEmail1());
+        bundle.putString(PHONE1, mealNotification.getPhone1());
+        bundle.putString(DBA1, mealNotification.getDba1());
         bundle.putString(NAME2, mealNotification.getName2());
         bundle.putString(MAJOR2, mealNotification.getMajor2());
         bundle.putString(CLASS2, mealNotification.getClass2());
         bundle.putString(EMAIL2, mealNotification.getEmail2());
+        bundle.putString(PHONE2, mealNotification.getPhone2());
+        bundle.putString(DBA2, mealNotification.getDba2());
         bundle.putString(DATE, mealNotification.getDate());
         bundle.putString(TIME, mealNotification.getTime());
         bundle.putString(LOCATION, mealNotification.getLocation());
