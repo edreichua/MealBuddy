@@ -58,7 +58,7 @@ public class GcmIntentService extends IntentService {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(getApplicationContext(), message, Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "You've been matched!", Toast.LENGTH_LONG).show();
             }
         });
     }
