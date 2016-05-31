@@ -354,15 +354,17 @@ public class UserProfileActivity extends AppCompatActivity {
         edit.putString("savedMajor", textMajor.getSelectedItem().toString());
         edit.putInt("savedMajorPos", textMajor.getSelectedItemPosition());
 
+        EditText textPhone = (EditText) findViewById(R.id.edit_phone);
+        edit.putString("savedPhone", textPhone.getText().toString());
+
         CheckBox checkBox = (CheckBox) findViewById(R.id.contactsharingcheckbox);
 
         if(checkBox.isChecked()){
-            EditText textPhone = (EditText) findViewById(R.id.edit_phone);
-            edit.putString("savedPhone", textPhone.getText().toString());
             edit.putBoolean("isCheck",true);
         }else{
             edit.putBoolean("isCheck",false);
         }
+
         // Commit change into shared preference
         edit.commit();
     }

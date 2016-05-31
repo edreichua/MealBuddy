@@ -61,6 +61,8 @@ public class MealUploader extends AsyncTask<Object, Void, String> {
             Map<String,String> params = new HashMap<>();
             params.put("result",jObject.toString());
             params.put("regId", Globals.regID);
+            params.put("name_to_match",meal.getmPreferedFriend());
+
 
             // Call server utilities
             ServerUtilities.post(Globals.URL + "/PostData.do", params);

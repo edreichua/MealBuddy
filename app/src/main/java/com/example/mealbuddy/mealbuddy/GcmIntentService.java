@@ -48,13 +48,12 @@ public class GcmIntentService extends IntentService {
 
                 // get the date of the meal
                 String date = newNotification.getDate();
-                int year = Integer.parseInt(date.substring(0, 4));
-                int month = Integer.parseInt(date.substring(4, 6));
-                int day = Integer.parseInt(date.substring(6, 8));
+                int year = Integer.parseInt(date.substring(0, 2));
+                int month = Integer.parseInt(date.substring(3, 5));
+                int day = Integer.parseInt(date.substring(6, 10));
 
                 // get the "time" of the meal
-                String time = newNotification.getTime();
-                String convertedTime = newNotification.convertToTime(time);
+                String convertedTime = newNotification.getTime();
 
                 // set appropriate alarms for each time (10 minutes before the meal)
                 if (convertedTime.equals("9Ls")) {

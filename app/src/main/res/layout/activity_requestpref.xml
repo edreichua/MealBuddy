@@ -32,6 +32,26 @@
                 android:textColor="@color/colorPrimary"
                 android:text="Random Meal" />
 
+            <com.example.mealbuddy.mealbuddy.CustomTextView
+                android:id="@+id/edit_friend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:paddingTop="10dp"
+                android:textSize="18dp"
+                android:textColor="@color/colorPrimary"
+                android:text="Enter the name of your friend:" />
+
+            <EditText
+                android:inputType="textPersonName"
+                android:id="@+id/edit_friend_name_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:textSize="30dp"
+                android:background="@android:color/transparent"
+                android:textColor="@color/color3c"
+                android:hint="Your friend's name" />
 
             <!-- Class year -->
 

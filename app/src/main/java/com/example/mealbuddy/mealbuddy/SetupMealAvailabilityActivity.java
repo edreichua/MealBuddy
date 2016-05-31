@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,6 +55,9 @@ public class SetupMealAvailabilityActivity extends AppCompatActivity {
         meal.setMyClassYear(prefs.getString("savedYear", ""));
         meal.setmEmail(prefs.getString("savedEmail", ""));
 
+        if((prefs.getBoolean("isCheck",false))){
+            meal.setmPhone(prefs.getString("savedPhone","Not Available"));
+        }
 
         // Get the ids of the buttons
         submitButton = (Button) findViewById(R.id.button_submit);
@@ -208,6 +212,10 @@ public class SetupMealAvailabilityActivity extends AppCompatActivity {
         Log.d("Testing", "Preferred field of study: " + meal.getmFieldOfStudyPref());
         Log.d("Testing", "Meal locations: " + meal.getmLocation());
         Log.d("Testing", "Meal times: " + meal.getmTime());
+
+        EditText friendName = (EditText) findViewById(R.id.edit_friend_name_text);
+        Log.d("Test name", friendName.getText().toString());
+        meal.setmPreferedFriend(friendName.getText().toString());
 
         new MealUploader().execute(meal);
 

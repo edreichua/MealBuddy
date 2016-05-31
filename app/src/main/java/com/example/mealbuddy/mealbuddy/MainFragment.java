@@ -25,11 +25,9 @@ public class MainFragment extends Fragment {
         // Set the font of the main buttons
         Button button1 = (Button) view.findViewById(R.id.buttonStranger);
         Button button2 = (Button) view.findViewById(R.id.buttonFriend);
-        Button button3 = (Button) view.findViewById(R.id.buttonCheckFriends);
         Typeface customFont = Typeface.createFromAsset(getActivity().getAssets(), "fonts/Ubuntu-B.ttf");
         button1.setTypeface(customFont);
         button2.setTypeface(customFont);
-        button3.setTypeface(customFont);
 
         return view;
     }

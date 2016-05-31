@@ -20,6 +20,7 @@ public class MealRequest {
     private String mRegId;
     private String mPhone;
     private String mDba;
+    private String mPreferedFriend;
     private int mStatus;
 
     // Constructor
@@ -32,6 +33,15 @@ public class MealRequest {
         this.mStatus = 0;
         this.mPhone = "Not Available";
         this.mDba = " ";
+        this.mPreferedFriend = "NULL";
+    }
+
+    // Setter and Getter for preferred name
+    public void setmPreferedFriend(String friendName) {
+        this.mPreferedFriend = friendName;
+    }
+    public String getmPreferedFriend() {
+        return mPreferedFriend;
     }
 
     // Setter and Getter for phone

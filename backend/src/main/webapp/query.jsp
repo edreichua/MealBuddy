@@ -37,6 +37,7 @@
 			<TH>phone</TH>
 			<TH>dba</TH>
 			<TH>status</TH>
+			<TH>friend name</TH>
 		</TR>
 		<%
         			ArrayList<RequestMealData> resultList = (ArrayList<RequestMealData>) request.getAttribute("result");
@@ -58,6 +59,7 @@
         						<TD> <%= entry.mPhone %></TD>
         						<TD> <%= entry.mDba %></TD>
         						<TD> <%= entry.mStatus %></TD>
+        						<TD> <%= entry.mFriend %></TD>
         					</TR>
         			<% }
         			} %>

@@ -49,6 +49,8 @@ public class AcceptActivity extends AppCompatActivity {
         TextView class2Text = (TextView)findViewById(R.id.class2);
         TextView email1Text = (TextView)findViewById(R.id.email1);
         TextView email2Text = (TextView)findViewById(R.id.email2);
+        TextView phone1Text = (TextView)findViewById(R.id.phone1);
+        TextView phone2Text = (TextView)findViewById(R.id.phone2);
 
         name1Text.setText(name1);
         name2Text.setText(name2);
@@ -59,6 +61,8 @@ public class AcceptActivity extends AppCompatActivity {
         class2Text.setText(class2);
         email1Text.setText(email1);
         email2Text.setText(email2);
+        phone1Text.setText(phone1);
+        phone2Text.setText(phone2);
     }
 
     public static String parseDate(String dateIn) {

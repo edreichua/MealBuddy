@@ -24,19 +24,20 @@ public class RequestMealData {
     public static final String FIELD_NAME_REGID = "regid";
     public static final String FIELD_NAME_PHONE = "phone";
     public static final String FIELD_NAME_DBA= "dba";
+    public static final String FIELD_NAME_PREFERRED_FRIEND = "pref_friend";
     public static final String FIELD_NAME_STATUS = "status";
 
 
 
     // Components of entity
     public String mID, mName, mClassYear, mMajor, mPrefClassYear, mPrefMajor,
-            mEmail, mDate, mRegId, mPhone, mDba, mStatus;
+            mEmail, mDate, mRegId, mPhone, mDba, mStatus, mFriend;
     public long mTime, mLocation;
 
     // Constructor for entity
     public RequestMealData(String _id, String _name, String _classyear, String _major, String _prefclassyear,
                            String _prefmajor, String _email, String _date, long _time, long _location,
-                           String _regid, String _phone, String _dba, String _status) {
+                           String _regid, String _phone, String _dba, String _status, String _friend) {
 
         // Initialize parameters
         mID = _id;
@@ -53,6 +54,6 @@ public class RequestMealData {
         mPhone = _phone;
         mDba = _dba;
         mStatus = _status;
-
+        mFriend = _friend;
     }
 }

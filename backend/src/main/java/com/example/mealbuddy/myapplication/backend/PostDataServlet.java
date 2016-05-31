@@ -2,12 +2,12 @@ package com.example.mealbuddy.myapplication.backend;
 
 import com.example.mealbuddy.myapplication.backend.Data.RequestMealData;
 import com.example.mealbuddy.myapplication.backend.Data.RequestMealDataStore;
-import com.google.appengine.labs.repackaged.org.json.JSONArray;
 import com.google.appengine.labs.repackaged.org.json.JSONException;
 import com.google.appengine.labs.repackaged.org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 public class PostDataServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
+    private static final Logger log = Logger.getLogger("PostDataServlet");
 
     /**
      * Standard doGet
@@ -30,6 +31,9 @@ public class PostDataServlet extends HttpServlet {
      */
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
+
+        String nameToMatch = req.getParameter("name_to_match");
+        log.info(nameToMatch);
 
         // Get parameters from request
         String jObjectString = req.getParameter("result");
@@ -64,7 +68,7 @@ public class PostDataServlet extends HttpServlet {
             String dba = (String) jObject.get(RequestMealData.FIELD_NAME_DBA);
             String status = (String) jObject.get(RequestMealData.FIELD_NAME_STATUS);
             RequestMealData entry = new RequestMealData(id, name, classyear, major, prefclassyear,
-                    prefmajor, email, date, time, location, regid, phone, dba, status);
+                    prefmajor, email, date, time, location, regid, phone, dba, status,nameToMatch);
 
             CheckMatch check = new CheckMatch(entry);
             RequestMealData mealMatch = check.findMatch(false);
@@ -81,7 +85,7 @@ public class PostDataServlet extends HttpServlet {
 
             else {
                 boolean ret =
-                        RequestMealDataStore.delete(mealMatch.mName,mealMatch.mID);
+                        RequestMealDataStore.delete(mealMatch.mName, mealMatch.mID);
 
                 if (ret) {
                     MessagingEndpoint msg = new MessagingEndpoint();

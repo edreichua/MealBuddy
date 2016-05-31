@@ -104,19 +104,17 @@ public class MainActivity extends AppCompatActivity
         SharedPreferences prefs = getSharedPreferences(PREFS, 0);
         if(prefs.getString("savedPhone","").equals("") ||
                 prefs.getString("savedEmail","").equals("")){
-            Toast.makeText(getApplicationContext(), "Please complete your profile settings" +
-                            " and enable phone sharing" ,
+            Toast.makeText(getApplicationContext(), "Please complete your profile settings",
+                    Toast.LENGTH_SHORT).show();
+        }else if(!prefs.getString("savedEmail", "").contains("@dartmouth.edu")){
+            Toast.makeText(getApplicationContext(), "Please specify your dartmouth.edu email address " ,
                     Toast.LENGTH_SHORT).show();
         }else {
             Intent intent = new Intent(this, SetupMealAvailabilityActivity.class);
             startActivity(intent);
         }
     }
-
-    public void checkFriend(View view) {
-        Toast.makeText(getApplicationContext(), "Feature coming up soon",
-                Toast.LENGTH_SHORT).show();
-    }
+    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

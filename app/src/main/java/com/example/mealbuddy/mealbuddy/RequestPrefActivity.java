@@ -4,31 +4,23 @@ package com.example.mealbuddy.mealbuddy;
  * Created by seancann on 4/19/2016.
  */
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 
 public class RequestPrefActivity extends AppCompatActivity {
 
@@ -62,6 +54,16 @@ public class RequestPrefActivity extends AppCompatActivity {
         meal.setMyMajor(prefs.getString("savedMajor", ""));
         meal.setMyClassYear(prefs.getString("savedYear", ""));
         meal.setmEmail(prefs.getString("savedEmail", ""));
+
+        // CHANGES TO MAKE
+        if((prefs.getBoolean("isCheck",false))){
+            meal.setmPhone(prefs.getString("savedPhone","Not Available"));
+        }
+        TextView friendNameTitle=(TextView) findViewById(R.id.edit_friend);
+        EditText friendNameEdit=(EditText) findViewById(R.id.edit_friend_name_text);
+        friendNameTitle.setVisibility(View.GONE);
+        friendNameEdit.setVisibility(View.GONE);
+        // CHANGES TO MAKE
 
 
         // Get the ids of the buttons
@@ -226,13 +228,10 @@ public class RequestPrefActivity extends AppCompatActivity {
             }
         };
 
-        DatePickerDialog dialog = new DatePickerDialog(RequestPrefActivity.this, mDateListener,
+        new DatePickerDialog(RequestPrefActivity.this, mDateListener,
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
-                calendar.get(Calendar.DAY_OF_MONTH));
-
-        dialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
-        dialog.show();
+                calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
 
 

@@ -110,16 +110,8 @@
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="111-222-3333"
+            android:text="Not Available"
             android:textColor="@color/color1c"
-            android:textSize="16sp"/>
-
-        <com.example.mealbuddy.mealbuddy.CustomTextView
-            android:id="@+id/dba1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="This person is willing to share their DBA! :)"
-            android:textColor="@color/color2c"
             android:textSize="16sp"/>
 
     </LinearLayout>
@@ -209,17 +201,10 @@
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="111-222-3333"
+            android:text="Not Available"
             android:textColor="@color/color1c"
             android:textSize="16sp"/>
 
-        <com.example.mealbuddy.mealbuddy.CustomTextView
-            android:id="@+id/dba2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="This person is willing to share their DBA! :)"
-            android:textColor="@color/color2c"
-            android:textSize="16sp"/>
 
     </LinearLayout>
 

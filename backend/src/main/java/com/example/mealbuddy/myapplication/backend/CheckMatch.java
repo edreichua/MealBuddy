@@ -1,18 +1,17 @@
 package com.example.mealbuddy.myapplication.backend;
 
-import com.example.mealbuddy.myapplication.backend.Data.*;
-
-import org.omg.CORBA.Request;
+import com.example.mealbuddy.myapplication.backend.Data.RequestMealData;
+import com.example.mealbuddy.myapplication.backend.Data.RequestMealDataStore;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.logging.Logger;
 
 /**
  * Created by edreichua on 5/26/16.
  */
 public class CheckMatch {
 
+    private static final Logger log = Logger.getLogger("CheckMatch");
     RequestMealData myData;
     public static final int[] PRIME = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31};
     ArrayList<Integer> times, location;
@@ -74,15 +73,25 @@ public class CheckMatch {
         location = factorPrime(myData.mLocation);
         String date = myData.mDate;
 
-        ArrayList<RequestMealData> possibleMatches1 = RequestMealDataStore.queryByDate(date,myData.mStatus);
-
+        ArrayList<RequestMealData> possibleMatches1 = RequestMealDataStore.queryByDate(date, myData.mStatus);
         ArrayList<RequestMealData> possibleMatches2 = queryByTime(possibleMatches1, times);
         ArrayList<RequestMealData> possibleMatches3 = queryByLocation(possibleMatches2, location);
         ArrayList<RequestMealData> possibleMatches = checkNotMyself(possibleMatches3);
 
+        if(myData.mStatus.equals("1")){
+            ArrayList<RequestMealData> match =  queryByName(possibleMatches);
+            if(match!=null && match.size()>0){
+                return match.get(0);
+            }else{
+                return null;
+            }
+        }
         if(possibleMatches == null || possibleMatches.isEmpty()){
             return null;
         }else if(isRandom){
+            possibleMatches = queryRandom(possibleMatches);
+            if( possibleMatches == null || possibleMatches.size()<=0)
+                return null;
             int rand = (int) (Math.random()*possibleMatches.size());
             return possibleMatches.get(rand);
         }else{
@@ -100,6 +109,21 @@ public class CheckMatch {
             return matches.get(rand);
         }
     }
+
+    public ArrayList<RequestMealData> queryRandom(ArrayList<RequestMealData> possibleMatches) {
+        if(possibleMatches == null)
+            return null;
+
+        ArrayList<RequestMealData> result = new ArrayList<>();
+        for (RequestMealData entry : possibleMatches) {
+            if ((entry.mPrefMajor.equals(myData.mMajor)|| entry.mPrefMajor.equals("No preference")) &&
+                    (entry.mPrefClassYear.equals(myData.mClassYear) || entry.mPrefClassYear.equals("No preference"))) {
+                result.add(entry);
+            }
+        }
+        return result;
+    }
+
     public ArrayList<RequestMealData> queryByTime(ArrayList<RequestMealData> possibleMatches,
                                                   ArrayList<Integer> times) {
         if(possibleMatches == null ||  times == null || times.isEmpty())
@@ -112,6 +136,23 @@ public class CheckMatch {
                     result.add(entry);
                     break;
                 }
+            }
+        }
+        return result;
+    }
+
+    public ArrayList<RequestMealData> queryByName(ArrayList<RequestMealData> possibleMatches) {
+
+        if(possibleMatches == null ||  times == null || times.isEmpty())
+            return null;
+
+        ArrayList<RequestMealData> result = new ArrayList<>();
+        for (RequestMealData entry : possibleMatches) {
+            log.info("matches "+myData.mFriend.replaceAll("\\s+","").toLowerCase()+" "+ entry.mName.replaceAll("\\s+","").toLowerCase()+" "+
+                    myData.mName.replaceAll("\\s+","").toLowerCase()+" "+entry.mFriend.replaceAll("\\s+","").toLowerCase());
+            if(myData.mFriend.replaceAll("\\s+","").toLowerCase().equals(entry.mName.replaceAll("\\s+","").toLowerCase()) &&
+                    myData.mName.replaceAll("\\s+","").toLowerCase().equals(entry.mFriend.replaceAll("\\s+","").toLowerCase())){
+                result.add(entry);
             }
         }
         return result;
