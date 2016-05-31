@@ -78,7 +78,7 @@
                     android:paddingLeft="20dp"
                     android:textSize="30dp"
                     android:background="@android:color/transparent"
-                    android:textColor="@color/color3c"
+                    android:textColor="@color/colorPrimary"
                     android:hint="@string/ui_edit_name" />
 
                 <!-- class section -->

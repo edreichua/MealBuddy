@@ -150,6 +150,9 @@ public class GcmIntentService extends IntentService {
                 .setAutoCancel(true)
                 .setContentIntent(contentIntent).build();
 
+        notification.defaults |= Notification.DEFAULT_SOUND;
+        notification.defaults |= Notification.DEFAULT_VIBRATE;
+
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         mNotificationManager.notify(0, notification);
     }
