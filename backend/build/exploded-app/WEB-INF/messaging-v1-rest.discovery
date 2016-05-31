@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"H01Z-1ikbwOw463Un2bFZHenx1g/IIHx9LLS9HsyHH13fzn5b1o-POI\"",
+ "etag": "\"H01Z-1ikbwOw463Un2bFZHenx1g/-zuB6awAXQFkGgTRpHJqLr5zfc4\"",
  "discoveryVersion": "v1",
  "id": "messaging:v1",
  "name": "messaging",
@@ -13,10 +13,10 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rest",
- "baseUrl": "https://myApplicationId.appspot.com/_ah/api/messaging/v1/sendMessage/",
- "basePath": "/_ah/api/messaging/v1/sendMessage/",
+ "baseUrl": "https://myApplicationId.appspot.com/_ah/api/messaging/v1/",
+ "basePath": "/_ah/api/messaging/v1/",
  "rootUrl": "https://myApplicationId.appspot.com/_ah/api/",
- "servicePath": "messaging/v1/sendMessage/",
+ "servicePath": "messaging/v1/",
  "batchPath": "batch",
  "parameters": {
   "alt": {
@@ -77,7 +77,7 @@
    "methods": {
     "sendMessage": {
      "id": "messaging.messagingEndpoint.sendMessage",
-     "path": "{message}",
+     "path": "sendMessage/{message}",
      "httpMethod": "POST",
      "parameters": {
       "message": {
@@ -88,6 +88,36 @@
      },
      "parameterOrder": [
       "message"
+     ],
+     "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+     ]
+    },
+    "sendMessage2Match": {
+     "id": "messaging.messagingEndpoint.sendMessage2Match",
+     "path": "sendMessage2Match/{message}/{regid1}/{regid2}",
+     "httpMethod": "POST",
+     "parameters": {
+      "message": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      },
+      "regid1": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      },
+      "regid2": {
+       "type": "string",
+       "required": true,
+       "location": "path"
+      }
+     },
+     "parameterOrder": [
+      "message",
+      "regid1",
+      "regid2"
      ],
      "scopes": [
       "https://www.googleapis.com/auth/userinfo.email"

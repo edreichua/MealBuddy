@@ -74,7 +74,8 @@ public class CheckMatch {
         location = factorPrime(myData.mLocation);
         String date = myData.mDate;
 
-        ArrayList<RequestMealData> possibleMatches1 = RequestMealDataStore.queryByDate(date);
+        ArrayList<RequestMealData> possibleMatches1 = RequestMealDataStore.queryByDate(date,myData.mStatus);
+
         ArrayList<RequestMealData> possibleMatches2 = queryByTime(possibleMatches1, times);
         ArrayList<RequestMealData> possibleMatches3 = queryByLocation(possibleMatches2, location);
         ArrayList<RequestMealData> possibleMatches = checkNotMyself(possibleMatches3);

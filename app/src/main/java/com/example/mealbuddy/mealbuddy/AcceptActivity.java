@@ -2,6 +2,7 @@ package com.example.mealbuddy.mealbuddy;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,13 +23,22 @@ public class AcceptActivity extends AppCompatActivity {
         String major1 = bundle.getString(NotificationFragment.MAJOR1);
         String class1 = bundle.getString(NotificationFragment.CLASS1);
         String email1 = bundle.getString(NotificationFragment.EMAIL1);
+        String phone1 = bundle.getString(NotificationFragment.PHONE1);
+        String dba1 = bundle.getString(NotificationFragment.DBA1);
         String name2 = bundle.getString(NotificationFragment.NAME2);
         String major2 = bundle.getString(NotificationFragment.MAJOR2);
         String class2 = bundle.getString(NotificationFragment.CLASS2);
         String email2 = bundle.getString(NotificationFragment.EMAIL2);
+        String phone2 = bundle.getString(NotificationFragment.PHONE2);
+        String dba2 = bundle.getString(NotificationFragment.DBA2);
         String date = bundle.getString(NotificationFragment.DATE);
         String time = bundle.getString(NotificationFragment.TIME);
         String location = bundle.getString(NotificationFragment.LOCATION);
+
+        Log.d("phone1: ", phone1);
+        Log.d("dba1: ", dba1);
+        Log.d("phone2: ", phone2);
+        Log.d("dba2: ", dba2);
 
         TextView title = (TextView)findViewById(R.id.textView2);
         TextView name1Text = (TextView)findViewById(R.id.name1);

@@ -10,6 +10,7 @@ import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -61,6 +62,7 @@ public class RequestPrefActivity extends AppCompatActivity {
         meal.setMyMajor(prefs.getString("savedMajor", ""));
         meal.setMyClassYear(prefs.getString("savedYear", ""));
         meal.setmEmail(prefs.getString("savedEmail", ""));
+
 
         // Get the ids of the buttons
         submitButton = (Button) findViewById(R.id.button_submit);
@@ -205,7 +207,6 @@ public class RequestPrefActivity extends AppCompatActivity {
         Log.d("Testing", "Preferred field of study: " + meal.getmFieldOfStudyPref());
         Log.d("Testing", "Meal locations: " + meal.getmLocation());
         Log.d("Testing", "Meal times: " + meal.getmTime());
-
 
         new MealUploader().execute(meal);
 

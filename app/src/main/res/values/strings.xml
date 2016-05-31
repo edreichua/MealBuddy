@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MealBuddy</string>
     <string name="facebook_app_id">1737239446490859</string>
+    <string name="google_app_id">1040154061256</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -32,6 +33,7 @@
     <string name="ui_toast_cancel">Entry discarded</string>
     <string name="action_settings">Settings</string>
 
+    <string name="display_notification">You have a new match!</string>
 
     <!-- **************** User Profile **************** -->
 
@@ -91,8 +93,28 @@
         <item>Faculty or Staff</item>
     </string-array>
 
+    <string-array name="profile_class_year_spinner_list">
+        <item>Unspecified</item>
+        <item>2020</item>
+        <item>2019</item>
+        <item>2018</item>
+        <item>2017</item>
+        <item>2016</item>
+        <item>Grad student</item>
+        <item>Faculty or Staff</item>
+    </string-array>
+
     <string-array name="request_field_of_study_spinner_list">
         <item>No preference</item>
+        <item>Arts</item>
+        <item>Humanities</item>
+        <item>Interdisciplinary</item>
+        <item>Sciences</item>
+        <item>Social Sciences</item>
+    </string-array>
+
+    <string-array name="profile_field_of_study_spinner_list">
+        <item>Unspecified</item>
         <item>Arts</item>
         <item>Humanities</item>
         <item>Interdisciplinary</item>
@@ -106,8 +128,5 @@
         <item>Take picture from camera</item>
         <item>Take picture from gallery</item>
     </string-array>
-
-
-
 
 </resources>

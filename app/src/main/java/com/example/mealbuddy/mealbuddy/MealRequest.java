@@ -18,6 +18,8 @@ public class MealRequest {
     private long mTime;                        // List of available times
     private long mLocation;                    // List of eating locations
     private String mRegId;
+    private String mPhone;
+    private String mDba;
     private int mStatus;
 
     // Constructor
@@ -28,6 +30,24 @@ public class MealRequest {
         this.mLocation = 1;
         this.mRegId = Globals.regID;
         this.mStatus = 0;
+        this.mPhone = "Not Available";
+        this.mDba = " ";
+    }
+
+    // Setter and Getter for phone
+    public void setmPhone(String phone) {
+        this.mPhone = phone;
+    }
+    public String getmPhone() {
+        return mPhone;
+    }
+
+    // Setter and Getter for dba
+    public void setmDba(String Dba) {
+        this.mDba = Dba;
+    }
+    public String getmDba() {
+        return mDba;
     }
 
     // Setter and Getter for regid

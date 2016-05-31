@@ -21,10 +21,14 @@ public class NotificationDbHelpher extends SQLiteOpenHelper {
     public static final String KEY_MAJOR1 = "major1";
     public static final String KEY_CLASS1 = "class1";
     public static final String KEY_EMAIL1 = "email1";
+    public static final String KEY_PHONE1 = "phone1";
+    public static final String KEY_DBA1 = "dba1";
     public static final String KEY_NAME2 = "name2";
     public static final String KEY_MAJOR2 = "major2";
     public static final String KEY_CLASS2 = "class2";
     public static final String KEY_EMAIL2 = "email2";
+    public static final String KEY_PHONE2 = "phone2";
+    public static final String KEY_DBA2 = "dba2";
     public static final String KEY_DATE = "data";
     public static final String KEY_TIME = "time";
     public static final String KEY_LOCATION = "location";
@@ -40,10 +44,14 @@ public class NotificationDbHelpher extends SQLiteOpenHelper {
             NotificationDbHelpher.KEY_MAJOR1,
             NotificationDbHelpher.KEY_CLASS1,
             NotificationDbHelpher.KEY_EMAIL1,
+            NotificationDbHelpher.KEY_PHONE1,
+            NotificationDbHelpher.KEY_DBA1,
             NotificationDbHelpher.KEY_NAME2,
             NotificationDbHelpher.KEY_MAJOR2,
             NotificationDbHelpher.KEY_CLASS2,
             NotificationDbHelpher.KEY_EMAIL2,
+            NotificationDbHelpher.KEY_PHONE2,
+            NotificationDbHelpher.KEY_DBA2,
             NotificationDbHelpher.KEY_DATE,
             NotificationDbHelpher.KEY_TIME,
             NotificationDbHelpher.KEY_LOCATION};
@@ -61,6 +69,10 @@ public class NotificationDbHelpher extends SQLiteOpenHelper {
             + " TEXT NOT NULL, "
             + KEY_EMAIL1
             + " TEXT NOT NULL, "
+            + KEY_PHONE1
+            + " TEXT NOT NULL, "
+            + KEY_DBA1
+            + " TEXT NOT NULL, "
             + KEY_NAME2
             + " TEXT NOT NULL, "
             + KEY_MAJOR2
@@ -68,6 +80,10 @@ public class NotificationDbHelpher extends SQLiteOpenHelper {
             + KEY_CLASS2
             + " TEXT NOT NULL, "
             + KEY_EMAIL2
+            + " TEXT NOT NULL, "
+            + KEY_PHONE2
+            + " TEXT NOT NULL, "
+            + KEY_DBA2
             + " TEXT NOT NULL, "
             + KEY_DATE
             + " TEXT NOT NULL, "
@@ -93,21 +109,25 @@ public class NotificationDbHelpher extends SQLiteOpenHelper {
         onCreate(database);
     }
 
-    public long insertNotification(Notification notification) {
+    public long insertNotification(MealNotification mealNotification) {
         SQLiteDatabase mDatabase = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
-        values.put(NotificationDbHelpher.KEY_NAME1, notification.getName1());
-        values.put(NotificationDbHelpher.KEY_MAJOR1, notification.getMajor1());
-        values.put(NotificationDbHelpher.KEY_CLASS1, notification.getClass1());
-        values.put(NotificationDbHelpher.KEY_EMAIL1, notification.getEmail1());
-        values.put(NotificationDbHelpher.KEY_NAME2, notification.getName2());
-        values.put(NotificationDbHelpher.KEY_MAJOR2, notification.getMajor2());
-        values.put(NotificationDbHelpher.KEY_CLASS2, notification.getClass2());
-        values.put(NotificationDbHelpher.KEY_EMAIL2, notification.getEmail2());
-        values.put(NotificationDbHelpher.KEY_DATE, notification.getDate());
-        values.put(NotificationDbHelpher.KEY_TIME, notification.getTime());
-        values.put(NotificationDbHelpher.KEY_LOCATION, notification.getLocation());
+        values.put(NotificationDbHelpher.KEY_NAME1, mealNotification.getName1());
+        values.put(NotificationDbHelpher.KEY_MAJOR1, mealNotification.getMajor1());
+        values.put(NotificationDbHelpher.KEY_CLASS1, mealNotification.getClass1());
+        values.put(NotificationDbHelpher.KEY_EMAIL1, mealNotification.getEmail1());
+        values.put(NotificationDbHelpher.KEY_PHONE1, mealNotification.getPhone1());
+        values.put(NotificationDbHelpher.KEY_DBA1, mealNotification.getDba1());
+        values.put(NotificationDbHelpher.KEY_NAME2, mealNotification.getName2());
+        values.put(NotificationDbHelpher.KEY_MAJOR2, mealNotification.getMajor2());
+        values.put(NotificationDbHelpher.KEY_CLASS2, mealNotification.getClass2());
+        values.put(NotificationDbHelpher.KEY_EMAIL2, mealNotification.getEmail2());
+        values.put(NotificationDbHelpher.KEY_PHONE2, mealNotification.getPhone2());
+        values.put(NotificationDbHelpher.KEY_DBA2, mealNotification.getDba2());
+        values.put(NotificationDbHelpher.KEY_DATE, mealNotification.getDate());
+        values.put(NotificationDbHelpher.KEY_TIME, mealNotification.getTime());
+        values.put(NotificationDbHelpher.KEY_LOCATION, mealNotification.getLocation());
 
         long insertId = mDatabase.insert(NotificationDbHelpher.TABLE_NAME_ENTRIES, null, values);
         mDatabase.close();
@@ -126,22 +146,22 @@ public class NotificationDbHelpher extends SQLiteOpenHelper {
     }
 
     // queries database for specific index and returns that exercise entry
-    public Notification fetchEntryByIndex(long rowId) {
+    public MealNotification fetchEntryByIndex(long rowId) {
         SQLiteDatabase mDatabase = this.getReadableDatabase();
         Cursor cursor = mDatabase.query(NotificationDbHelpher.TABLE_NAME_ENTRIES,
                 allColumns, KEY_ROWID + "=" + rowId, null, null, null, null, null);
 
-        Notification notification = cursorToNotification(cursor);
+        MealNotification mealNotification = cursorToNotification(cursor);
 
         cursor.close();
         mDatabase.close();
-        return notification;
+        return mealNotification;
     }
 
     // returns an arraylist of all the entries
-    public ArrayList<Notification> fetchEntries() {
+    public ArrayList<MealNotification> fetchEntries() {
         SQLiteDatabase mDatabase = this.getWritableDatabase();
-        ArrayList<Notification> histories = new ArrayList<Notification>();
+        ArrayList<MealNotification> histories = new ArrayList<MealNotification>();
 
         Cursor cursor = mDatabase.query(NotificationDbHelpher.TABLE_NAME_ENTRIES,
                 allColumns, null, null, null, null, null);
@@ -149,7 +169,7 @@ public class NotificationDbHelpher extends SQLiteOpenHelper {
         cursor.moveToFirst();
 
         while (!cursor.isAfterLast()) {
-            Notification history = cursorToNotification(cursor);
+            MealNotification history = cursorToNotification(cursor);
             histories.add(history);
             cursor.moveToNext();
         }
@@ -160,21 +180,25 @@ public class NotificationDbHelpher extends SQLiteOpenHelper {
         return histories;
     }
 
-    public static Notification cursorToNotification(Cursor cursor) {
-        Notification notification = new Notification();
-        notification.setId(cursor.getLong(0));
-        notification.setName1(cursor.getString(1));
-        notification.setMajor1(cursor.getString(2));
-        notification.setClass1(cursor.getString(3));
-        notification.setEmail1(cursor.getString(4));
-        notification.setName2(cursor.getString(5));
-        notification.setMajor2(cursor.getString(6));
-        notification.setClass2(cursor.getString(7));
-        notification.setEmail2(cursor.getString(8));
-        notification.setDate(cursor.getString(9));
-        notification.setTime(cursor.getString(10));
-        notification.setLocation(cursor.getString(11));
+    public static MealNotification cursorToNotification(Cursor cursor) {
+        MealNotification mealNotification = new MealNotification();
+        mealNotification.setId(cursor.getLong(0));
+        mealNotification.setName1(cursor.getString(1));
+        mealNotification.setMajor1(cursor.getString(2));
+        mealNotification.setClass1(cursor.getString(3));
+        mealNotification.setEmail1(cursor.getString(4));
+        mealNotification.setPhone1(cursor.getString(5));
+        mealNotification.setDba1(cursor.getString(6));
+        mealNotification.setName2(cursor.getString(7));
+        mealNotification.setMajor2(cursor.getString(8));
+        mealNotification.setClass2(cursor.getString(9));
+        mealNotification.setEmail2(cursor.getString(10));
+        mealNotification.setPhone2(cursor.getString(11));
+        mealNotification.setDba2(cursor.getString(12));
+        mealNotification.setDate(cursor.getString(13));
+        mealNotification.setTime(cursor.getString(14));
+        mealNotification.setLocation(cursor.getString(15));
 
-        return notification;
+        return mealNotification;
     }
 }

@@ -24,6 +24,8 @@ public class Globals {
     public static final String FIELD_NAME_TIME = "time";
     public static final String FIELD_NAME_LOCATION = "location";
     public static final String FIELD_NAME_REGID = "regid";
+    public static final String FIELD_NAME_PHONE = "phone";
+    public static final String FIELD_NAME_DBA = "dba";
     public static final String FIELD_NAME_STATUS = "status";
 
     // Server utilities

@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -32,15 +34,19 @@ public class NotificationFragment extends ListFragment {
     public static final String MAJOR1 = "major1";
     public static final String CLASS1 = "class1";
     public static final String EMAIL1 = "email1";
+    public static final String PHONE1 = "phone1";
+    public static final String DBA1 = "dba1";
     public static final String NAME2 = "name2";
     public static final String MAJOR2 = "major2";
     public static final String CLASS2 = "class2";
     public static final String EMAIL2 = "email2";
+    public static final String PHONE2 = "phone2";
+    public static final String DBA2 = "dba2";
     public static final String DATE = "date";
     public static final String TIME = "time";
     public static final String LOCATION = "location";
 
-    public static List<Notification> values;
+    public static List<MealNotification> values;
 
     public static NotificationAdapter adapter;
 
@@ -53,22 +59,7 @@ public class NotificationFragment extends ListFragment {
 
         //List of Notifications
         values = loader.loadInBackground();
-//        values = new ArrayList<Notification>();
-//
-//        Notification notification = new Notification();
-//        notification.setLocation("Collis");
-//        notification.setDate("5 20 2016");
-//        notification.setClass1("2017");
-//        notification.setClass2("2018");
-//        notification.setEmail1("fuck@fuckyou.com");
-//        notification.setEmail2("shit@fuckyou.com");
-//        notification.setMajor1("cs");
-//        notification.setMajor2("film");
-//        notification.setName1("fucktard");
-//        notification.setName2("shit face");
-//        notification.setTime("morning");
-
-//        values.add(notification);
+        Collections.reverse(values);
         adapter = new NotificationAdapter(getActivity(), values);
 
         setListAdapter(adapter);
@@ -80,24 +71,28 @@ public class NotificationFragment extends ListFragment {
 
     public void onListItemClick(ListView parent, View view, int position, long id) {
         super.onListItemClick(parent, view, position, id);
-        Notification notification = getNotificationByPosition(position);
+        MealNotification mealNotification = getNotificationByPosition(position);
 
         Intent intent = new Intent();
         Bundle bundle = new Bundle();
 
         bundle.putInt(POSITION, position);
-        bundle.putLong(ROWID, notification.getId());
-        bundle.putString(NAME1, notification.getName1());
-        bundle.putString(MAJOR1, notification.getMajor1());
-        bundle.putString(CLASS1, notification.getClass1());
-        bundle.putString(EMAIL1, notification.getEmail1());
-        bundle.putString(NAME2, notification.getName2());
-        bundle.putString(MAJOR2, notification.getMajor2());
-        bundle.putString(CLASS2, notification.getClass2());
-        bundle.putString(EMAIL2, notification.getEmail2());
-        bundle.putString(DATE, notification.getDate());
-        bundle.putString(TIME, notification.getTime());
-        bundle.putString(LOCATION, notification.getLocation());
+        bundle.putLong(ROWID, mealNotification.getId());
+        bundle.putString(NAME1, mealNotification.getName1());
+        bundle.putString(MAJOR1, mealNotification.getMajor1());
+        bundle.putString(CLASS1, mealNotification.getClass1());
+        bundle.putString(EMAIL1, mealNotification.getEmail1());
+        bundle.putString(PHONE1, mealNotification.getPhone1());
+        bundle.putString(DBA1, mealNotification.getDba1());
+        bundle.putString(NAME2, mealNotification.getName2());
+        bundle.putString(MAJOR2, mealNotification.getMajor2());
+        bundle.putString(CLASS2, mealNotification.getClass2());
+        bundle.putString(EMAIL2, mealNotification.getEmail2());
+        bundle.putString(PHONE2, mealNotification.getPhone2());
+        bundle.putString(DBA2, mealNotification.getDba2());
+        bundle.putString(DATE, mealNotification.getDate());
+        bundle.putString(TIME, mealNotification.getTime());
+        bundle.putString(LOCATION, mealNotification.getLocation());
 
         intent.putExtras(bundle);
         intent.setAction(ACCEPTACTIVITY);
@@ -106,26 +101,26 @@ public class NotificationFragment extends ListFragment {
     }
 
     // use asynctaskloader to read in data and get the list of all histories
-    private class NotificationLoader extends AsyncTaskLoader<List<Notification>> {
+    private class NotificationLoader extends AsyncTaskLoader<List<MealNotification>> {
         public NotificationLoader(Context context) {
             super(context);
         }
 
-        public List<Notification> loadInBackground() {
+        public List<MealNotification> loadInBackground() {
             return MainActivity.datasource.fetchEntries();
         }
     }
 
-    public static Notification getNotificationByPosition(int position) {return values.get(position);}
+    public static MealNotification getNotificationByPosition(int position) {return values.get(position);}
 
     /////////////////////// Adapter for listview ///////////////////////
 
     public class NotificationAdapter extends BaseAdapter {
         private LayoutInflater inflater;
-        private List<Notification> notifications;
+        private List<MealNotification> mealNotifications;
 
-        public NotificationAdapter(Context context, List<Notification> entries) {
-            this.notifications = entries;
+        public NotificationAdapter(Context context, List<MealNotification> entries) {
+            this.mealNotifications = entries;
             inflater = LayoutInflater.from(context);
         }
 
@@ -136,7 +131,7 @@ public class NotificationFragment extends ListFragment {
                 view = inflater.inflate(R.layout.list_notification, parent, false);
             }
 
-            Notification entry = notifications.get(position);
+            MealNotification entry = mealNotifications.get(position);
 
             // Set the first line
             TextView firstLine = (TextView) view.findViewById(R.id.notification_list_first_line);
@@ -159,7 +154,7 @@ public class NotificationFragment extends ListFragment {
         @Override
         public void notifyDataSetChanged(){
 //            if(MainActivity.DBhelper != null) {
-//                List<Notification> list = MainActivity.DBhelper.fetchEntries();
+//                List<MealNotification> list = MainActivity.DBhelper.fetchEntries();
 //                adapter = new NotificationAdapter(getActivity(), list);
 //                setListAdapter(adapter);
 //            }
@@ -168,7 +163,7 @@ public class NotificationFragment extends ListFragment {
 
         @Override
         public Object getItem(int position) {
-            return notifications.get(position);
+            return mealNotifications.get(position);
         }
 
         @Override
@@ -178,11 +173,11 @@ public class NotificationFragment extends ListFragment {
 
         @Override
         public int getCount() {
-            return notifications.size();
+            return mealNotifications.size();
         }
 
-        public void setNotifications(List<Notification> data) {
-            if (data != null) notifications.addAll(data);
+        public void setMealNotifications(List<MealNotification> data) {
+            if (data != null) mealNotifications.addAll(data);
             notifyDataSetChanged();
         }
 
@@ -190,9 +185,9 @@ public class NotificationFragment extends ListFragment {
         /////////////////////// Helper function ///////////////////////
 
         /**
-         * Helper function to get the first line in the notifications list
+         * Helper function to get the first line in the mealNotifications list
          */
-        private String getFirstLine(Notification notif) {
+        private String getFirstLine(MealNotification notif) {
 
 //            int type = notif.getType();
 //            if (type == 0 || type == 3)
@@ -208,9 +203,9 @@ public class NotificationFragment extends ListFragment {
         }
 
         /**
-         * Helper function to get the second line in the notifications list
+         * Helper function to get the second line in the mealNotifications list
          */
-        private String getSecondLine(Notification notif) {
+        private String getSecondLine(MealNotification notif) {
 
             String date = notif.getDate();
             String location = notif.getLocation();
@@ -231,9 +226,9 @@ public class NotificationFragment extends ListFragment {
         }
 
         /**
-         * Helper function to get the type for background in the notifications list
+         * Helper function to get the type for background in the mealNotifications list
          */
-        private int getBackground(Notification notif) {
+        private int getBackground(MealNotification notif) {
 
 //            int type = notif.getType();
 //            if (type == 0 || type == 3)

@@ -51,6 +51,8 @@ public class RequestMealDataStore {
         entity.setProperty(RequestMealData.FIELD_NAME_TIME, entry.mTime);
         entity.setProperty(RequestMealData.FIELD_NAME_LOCATION, entry.mLocation);
         entity.setProperty(RequestMealData.FIELD_NAME_REGID, entry.mRegId);
+        entity.setProperty(RequestMealData.FIELD_NAME_PHONE, entry.mPhone);
+        entity.setProperty(RequestMealData.FIELD_NAME_DBA, entry.mDba);
         entity.setProperty(RequestMealData.FIELD_NAME_STATUS, entry.mStatus);
 
 
@@ -131,7 +133,7 @@ public class RequestMealDataStore {
      * Query method to return an ArrayList of all the entities in the data store
      * @return
      */
-    public static ArrayList<RequestMealData> queryByDate(String date) {
+    public static ArrayList<RequestMealData> queryByDate(String date, String status) {
 
         // Initialise the ArrayList to be returned
         ArrayList<RequestMealData> resultList = new ArrayList<>();
@@ -143,7 +145,14 @@ public class RequestMealDataStore {
         Query.Filter dateFilter = new Query.FilterPredicate(RequestMealData.FIELD_NAME_DATE,
                 Query.FilterOperator.EQUAL, date);
 
-        query.setFilter(dateFilter);
+        // Prepare a filter for status
+        Query.Filter statusFilter = new Query.FilterPredicate(RequestMealData.FIELD_NAME_STATUS,
+                Query.FilterOperator.EQUAL, status);
+
+        Query.Filter combinedFilter =
+                Query.CompositeFilterOperator.and(dateFilter, statusFilter);
+
+        query.setFilter(combinedFilter);
         query.setAncestor(getKey());
         PreparedQuery pq = mDatastore.prepare(query);
 
@@ -159,6 +168,8 @@ public class RequestMealDataStore {
         // return ArrayList
         return resultList;
     }
+
+
 
     /**
      * Retrieve exercise data from entity
@@ -187,6 +198,8 @@ public class RequestMealDataStore {
                 (Long) entity.getProperty(RequestMealData.FIELD_NAME_TIME),
                 (Long) entity.getProperty(RequestMealData.FIELD_NAME_LOCATION),
                 (String) entity.getProperty(RequestMealData.FIELD_NAME_REGID),
+                (String) entity.getProperty(RequestMealData.FIELD_NAME_PHONE),
+                (String) entity.getProperty(RequestMealData.FIELD_NAME_DBA),
                 (String) entity.getProperty(RequestMealData.FIELD_NAME_STATUS));
     }
 }

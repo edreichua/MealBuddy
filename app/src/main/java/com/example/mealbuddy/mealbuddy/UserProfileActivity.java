@@ -21,6 +21,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -298,6 +299,7 @@ public class UserProfileActivity extends AppCompatActivity {
 
         EditText textName = (EditText) findViewById(R.id.edit_name);
         textName.setText(prefs.getString("savedName", ""));
+        textName.setEnabled(false);
 
         EditText textEmail = (EditText) findViewById(R.id.edit_email);
         textEmail.setText(prefs.getString("savedEmail", ""));
@@ -310,6 +312,9 @@ public class UserProfileActivity extends AppCompatActivity {
 
         Spinner textMajor = (Spinner) findViewById(R.id.edit_major);
         textMajor.setSelection(prefs.getInt("savedMajorPos", 0));
+
+        CheckBox checkBox = (CheckBox) findViewById(R.id.contactsharingcheckbox);
+        checkBox.setChecked(prefs.getBoolean("isCheck",false));
 
     }
 
@@ -328,9 +333,6 @@ public class UserProfileActivity extends AppCompatActivity {
         EditText textEmail = (EditText) findViewById(R.id.edit_email);
         edit.putString("savedEmail", textEmail.getText().toString());
 
-        EditText textPhone = (EditText) findViewById(R.id.edit_phone);
-        edit.putString("savedPhone", textPhone.getText().toString());
-
         Spinner textYear = (Spinner) findViewById(R.id.edit_class);
         edit.putString("savedYear", textYear.getSelectedItem().toString());
         edit.putInt("savedYearPos", textYear.getSelectedItemPosition());
@@ -339,6 +341,15 @@ public class UserProfileActivity extends AppCompatActivity {
         edit.putString("savedMajor", textMajor.getSelectedItem().toString());
         edit.putInt("savedMajorPos", textMajor.getSelectedItemPosition());
 
+        CheckBox checkBox = (CheckBox) findViewById(R.id.contactsharingcheckbox);
+
+        if(checkBox.isChecked()){
+            EditText textPhone = (EditText) findViewById(R.id.edit_phone);
+            edit.putString("savedPhone", textPhone.getText().toString());
+            edit.putBoolean("isCheck",true);
+        }else{
+            edit.putBoolean("isCheck",false);
+        }
         // Commit change into shared preference
         edit.commit();
     }

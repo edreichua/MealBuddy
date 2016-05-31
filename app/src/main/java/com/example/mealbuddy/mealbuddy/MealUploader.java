@@ -43,6 +43,10 @@ public class MealUploader extends AsyncTask<Object, Void, String> {
                     Long.toString(meal.getmTime()));
             jObject.put(Globals.FIELD_NAME_LOCATION,
                     Long.toString(meal.getmLocation()));
+            jObject.put(Globals.FIELD_NAME_PHONE,
+                    meal.getmPhone());
+            jObject.put(Globals.FIELD_NAME_DBA,
+                    meal.getmDba());
             jObject.put(Globals.FIELD_NAME_REGID,
                     meal.getmRegId());
             jObject.put(Globals.FIELD_NAME_STATUS,
