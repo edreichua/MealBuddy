@@ -179,7 +179,7 @@
                         android:paddingTop="10dp"
                         android:textSize="18dp"
                         android:textColor="@color/colorPrimary"
-                        android:text="Allow contact sharing" />
+                        android:text="Allow phone sharing" />
 
                 </LinearLayout>
 
