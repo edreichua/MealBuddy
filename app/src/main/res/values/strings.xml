@@ -45,7 +45,7 @@
     <string name="photo_picker_tag">photo_picker_tag</string>
 
     <!-- Text for UI-->
-    <string name="ui_profile_photo_title">Profile Photo:</string>
+    <string name="ui_profile_photo_title">Profile Photo</string>
     <string name="ui_name_title">Name</string>
     <string name="ui_email_title">Blitz</string>
     <string name="ui_phone_title">Phone</string>

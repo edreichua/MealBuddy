@@ -14,7 +14,6 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -56,6 +55,9 @@ public class NotificationFragment extends ListFragment {
         Log.d("test", "test2");
 
         NotificationLoader loader = new NotificationLoader(getActivity());
+
+        com.example.mealbuddy.mealbuddy.CustomTextViewBold titleWords = (com.example.mealbuddy.mealbuddy.CustomTextViewBold) getActivity().findViewById(R.id.titleWords);
+        titleWords.setText("Notifications");
 
         //List of Notifications
         values = loader.loadInBackground();
@@ -193,7 +195,7 @@ public class NotificationFragment extends ListFragment {
 //            if (type == 0 || type == 3)
 //                return "You have a match!";
 //            else if (type == 1)
-                return "Upcoming meal!";
+                return "Meal Match!";
 //            else if (type == 2)
 //                return "Pending meal...";
 //            else if (type == 4)
@@ -215,7 +217,7 @@ public class NotificationFragment extends ListFragment {
 //            if (type == 0 || type == 3)
 //                return "Click here to view and confirm";
 //            else if (type == 1)
-                return "Grab a meal on " + date + " at " + location;
+                return "Grab a meal on " + AcceptActivity.parseDate(date) + " at " + location;
 //            else if (type == 2)
 //                return "Finding a future friend to match you with...";
 //            else if (type == 4)

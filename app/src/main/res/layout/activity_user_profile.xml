@@ -20,14 +20,6 @@
                 android:orientation="vertical"
                 android:layout_alignParentTop="true">
 
-                <com.example.mealbuddy.mealbuddy.CustomTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:textSize="30dp"
-                    android:textColor="@color/colorPrimary"
-                    android:text="User Profile"/>
-
                 <!-- profile photo section -->
                 <com.example.mealbuddy.mealbuddy.CustomTextView
                     android:layout_width="wrap_content"
@@ -56,12 +48,12 @@
 
                     <Button
                         android:id="@+id/button_change"
-                        android:layout_width="wrap_content"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="5dp"
                         android:textSize="20dp"
-                        android:background="@color/color2a"
+                        android:background="@color/color3a"
                         android:textColor="@color/color1e"
                         android:onClick="selectChange"
                         android:text="@string/ui_change_button" >
@@ -162,7 +154,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:textSize="30dp"
+                    android:textSize="25dp"
                     android:background="@android:color/transparent"
                     android:textColor="@color/color3c"
                     android:hint="@string/ui_edit_phone" />

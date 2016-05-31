@@ -3,7 +3,6 @@ package com.example.mealbuddy.mealbuddy;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.TextView;
 
 /**
@@ -40,7 +39,7 @@ public class AcceptActivity extends AppCompatActivity {
         Log.d("phone2: ", phone2);
         Log.d("dba2: ", dba2);
 
-        TextView title = (TextView)findViewById(R.id.textView2);
+        TextView title = (TextView)findViewById(R.id.upcomingMealText);
         TextView name1Text = (TextView)findViewById(R.id.name1);
         TextView name2Text = (TextView)findViewById(R.id.name2);
         TextView dateText = (TextView)findViewById(R.id.date);
@@ -51,19 +50,26 @@ public class AcceptActivity extends AppCompatActivity {
         TextView email1Text = (TextView)findViewById(R.id.email1);
         TextView email2Text = (TextView)findViewById(R.id.email2);
 
-        title.setText(name1 + " has been matched with " + name2 + "!");
         name1Text.setText(name1);
         name2Text.setText(name2);
-        dateText.setText("Date: " + date + "\n" + "Time: " + time + "\n" + "Location: " + location);
-        major1Text.setText("Major: " + major1);
-        major2Text.setText("Major: " + major2);
-        class1Text.setText("Class: " + class1);
-        class2Text.setText("Class: " + class2);
-        email1Text.setText("Email: " + email1);
-        email2Text.setText("Email: " + email2);
+        dateText.setText("Date: " + parseDate(date) + "\n" + "Time: " + time + "\n" + "Location: " + location);
+        major1Text.setText(major1);
+        major2Text.setText(major2);
+        class1Text.setText(class1);
+        class2Text.setText(class2);
+        email1Text.setText(email1);
+        email2Text.setText(email2);
     }
 
-    public void onOKClick(View view) {
-        finish();
+    public static String parseDate(String dateIn) {
+        String dateOut = "";
+        for (int i = 0; i<dateIn.length(); i++) {
+            if (dateIn.charAt(i) == ' ') {
+                dateOut += "/";
+            }
+            else
+                dateOut += dateIn.charAt(i);
+        }
+        return dateOut;
     }
 }

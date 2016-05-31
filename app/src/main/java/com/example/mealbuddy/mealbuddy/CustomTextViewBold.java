@@ -12,7 +12,7 @@ public class CustomTextViewBold extends TextView {
 
     public CustomTextViewBold(Context context, AttributeSet attributes) {
         super(context,attributes);
-        this.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/Ubuntu-M.ttf"));
+        this.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/Ubuntu-B.ttf"));
     }
 
 }

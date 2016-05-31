@@ -3,191 +3,224 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <com.example.mealbuddy.mealbuddy.CustomTextViewBold
+        android:id="@+id/upcomingMealText"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="Spongebob Squarepants has been matched with Patrick Star!"
-        android:textSize="25sp"
-        android:textStyle="bold"
+        android:text="Meal Match!"
+        android:textSize="40sp"
         android:textColor="@color/colorPrimary"
-        android:id="@+id/textView2"
         android:layout_marginTop="15dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
+    <com.example.mealbuddy.mealbuddy.CustomTextView
+        android:id="@+id/date"
+        android:layout_below="@id/upcomingMealText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Date: May 26, 2016\nTime: 6:00-7:00 PM\nLocation: Foco"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"/>
+
+    <!-- Info for person 1 -->
     <LinearLayout
-        android:layout_marginTop="110dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/person1Layout"
+        android:layout_below="@id/date"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical">
 
         <ImageView
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/spongebob"/>
 
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:id="@+id/name1"
+            android:layout_marginLeft="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Spongebob Squarepants"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Class:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:id="@+id/class1"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017"
+            android:textColor="@color/color1c"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Major:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:id="@+id/major1"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Culinary Arts"
+            android:textColor="@color/color1c"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:id="@+id/email1"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="spongebob.squarepants.17@dartmouth.edu"
+            android:textColor="@color/color1c"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:id="@+id/phone1"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="111-222-3333"
+            android:textColor="@color/color1c"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:id="@+id/dba1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This person is willing to share their DBA! :)"
+            android:textColor="@color/color2c"
+            android:textSize="16sp"/>
+
+    </LinearLayout>
+
+    <!-- Info for person 2 -->
+    <LinearLayout
+        android:id="@+id/person2Layout"
+        android:layout_below="@id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:layout_marginLeft="220dp"
+        android:orientation="vertical">
+
         <ImageView
-            android:layout_marginStart="50dp"
-            android:layout_marginLeft="50dp"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:src="@drawable/patrick"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="260dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_width="155dp"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/name1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Spongebob Squarepants"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            android:textSize="12sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="260dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginLeft="220dp"
-        android:layout_width="155dp"
-        android:layout_height="wrap_content">
-
-        <TextView
+        <com.example.mealbuddy.mealbuddy.CustomTextView
             android:id="@+id/name2"
-            android:layout_width="match_parent"
+            android:layout_marginLeft="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="Patrick Star"
             android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            android:textSize="12sp"/>
+            android:textSize="25sp"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="280dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Date: May 26, 2016\nTime: 6:00-7:00 PM\nLocation: Foco"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            android:textSize="20sp"/>
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/major1"
-        android:layout_marginTop="400dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Major: Culinary Arts"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:id="@+id/major2"
-        android:layout_marginTop="400dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginLeft="220dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Major: Idiotic Arts"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:id="@+id/class1"
-        android:layout_marginTop="430dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Class: 2017"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:textSize="16sp"/>
-
-    <TextView
-        android:id="@+id/class2"
-        android:layout_marginTop="430dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginLeft="220dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Class: 2017"
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:textSize="16sp"/>
-
-    <LinearLayout
-        android:layout_marginTop="460dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/email1"
+        <com.example.mealbuddy.mealbuddy.CustomTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email: spongebob.squarepants.17@dartmouth.edu"
+            android:paddingTop="10dp"
+            android:text="Class:"
             android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
             android:textSize="16sp"/>
 
-    </LinearLayout>
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:id="@+id/class2"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2017"
+            android:textColor="@color/color1c"
+            android:textSize="16sp"/>
 
-    <LinearLayout
-        android:layout_marginTop="460dp"
-        android:layout_marginStart="220dp"
-        android:layout_marginLeft="20dp"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content">
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Major:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
 
-        <TextView
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:id="@+id/major2"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Idiotic Arts"
+            android:textColor="@color/color1c"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email:"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
             android:id="@+id/email2"
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Email: patrick.star.17@dartmouth.edu"
+            android:text="patrick.star.17@dartmouth.edu"
+            android:textColor="@color/color1c"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Phone:"
             android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:id="@+id/phone2"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="111-222-3333"
+            android:textColor="@color/color1c"
+            android:textSize="16sp"/>
+
+        <com.example.mealbuddy.mealbuddy.CustomTextView
+            android:id="@+id/dba2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="This person is willing to share their DBA! :)"
+            android:textColor="@color/color2c"
             android:textSize="16sp"/>
 
     </LinearLayout>
-
-    <Button
-        android:layout_marginTop="500dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginLeft="150dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="OK"
-        android:textSize="16sp"
-        android:onClick="onOKClick"/>
 
 </RelativeLayout>

@@ -19,6 +19,9 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.mainfragment, container, false);
 
+        com.example.mealbuddy.mealbuddy.CustomTextViewBold titleWords = (com.example.mealbuddy.mealbuddy.CustomTextViewBold) getActivity().findViewById(R.id.titleWords);
+        titleWords.setText("Meal Buddy");
+
         // Set the font of the main buttons
         Button button1 = (Button) view.findViewById(R.id.buttonStranger);
         Button button2 = (Button) view.findViewById(R.id.buttonFriend);

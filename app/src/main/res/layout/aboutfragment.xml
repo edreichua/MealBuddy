@@ -6,25 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.example.mealbuddy.mealbuddy.CustomTextViewBold
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:textSize="40sp"
-        android:textColor="@color/colorPrimary"
-        android:gravity="center_horizontal"
-        android:text="About"/>
+    <!-- TODO Sean's code, also the moving down of everything -->
+    <!--<com.example.mealbuddy.mealbuddy.CustomTextViewBold-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:textSize="40sp"-->
+    <!--android:textColor="@color/colorPrimary"-->
+    <!--android:gravity="center_horizontal"-->
+    <!--android:text="About"/>-->
 
     <com.example.mealbuddy.mealbuddy.CustomTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="8dp"
         android:textSize="25sp"
-        android:textColor="@color/color2c"
+        android:textColor="@color/color4c"
         android:layout_centerHorizontal="true"
         android:text="Meet the Meal Buddies"/>
 
     <ImageView
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="45dp"
         android:layout_width="300dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
@@ -33,7 +34,7 @@
     <com.example.mealbuddy.mealbuddy.CustomTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="260dp"
         android:textSize="15sp"
         android:textColor="@color/color1c"
         android:text="Our team consists of Taeho Sung '17, Sean Cann '17, Jun Suh '17, and Edrei Chua '17."/>
@@ -41,7 +42,7 @@
     <com.example.mealbuddy.mealbuddy.CustomTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="310dp"
         android:textSize="15sp"
         android:textColor="@color/color1c"
         android:text="These four strapping lads are the creators of Meal Buddy, an app designed to help you conveniently grab meals with both old friends and new acquaintances. NOTE: THIS IS NOT A DATING APP. TINDER AND FRIENDSY SHOULD REALLY BE ENOUGH TO QUENCH YOUR THIRST."/>
@@ -51,9 +52,9 @@
         android:id="@+id/TextViewWebsite"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_marginTop="470dp"
+        android:layout_marginTop="430dp"
         android:textSize="20dp"
-        android:textColor="@color/color2c"
+        android:textColor="@color/color1c"
         android:autoLink="web"/>
 
 </RelativeLayout>

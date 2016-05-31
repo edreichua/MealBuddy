@@ -17,6 +17,8 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        getSupportActionBar().setTitle("Menus");
+
         web = (WebView) findViewById(R.id.webView);
 
         web.setWebViewClient(new MyBrowser());
