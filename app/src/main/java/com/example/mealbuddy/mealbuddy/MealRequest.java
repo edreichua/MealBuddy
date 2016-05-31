@@ -31,7 +31,7 @@ public class MealRequest {
         this.mRegId = Globals.regID;
         this.mStatus = 0;
         this.mPhone = "Not Available";
-        this.mDba = "";
+        this.mDba = " ";
     }
 
     // Setter and Getter for phone
