@@ -45,6 +45,58 @@ public class GcmIntentService extends IntentService {
                 Log.d("Testing1", str);
                 showToast(str);
                 MealNotification newNotification = new MealNotification(str);
+
+                // get the date of the meal
+                String date = newNotification.getDate();
+                int year = Integer.parseInt(date.substring(0, 4));
+                int month = Integer.parseInt(date.substring(4, 6));
+                int day = Integer.parseInt(date.substring(6, 8));
+
+                // get the "time" of the meal
+                String time = newNotification.getTime();
+                String convertedTime = newNotification.convertToTime(time);
+
+                // set appropriate alarms for each time (10 minutes before the meal)
+                if (convertedTime.equals("9Ls")) {
+                    AlarmScheduler.setSchedule(getBaseContext(), year, month, day, 8, 35);
+                }
+
+                else if (convertedTime.equals("10s")) {
+                    AlarmScheduler.setSchedule(getBaseContext(), year, month, day, 9, 50);
+                }
+
+                else if (convertedTime.equals("11s")) {
+                    AlarmScheduler.setSchedule(getBaseContext(), year, month, day, 11, 5);
+                }
+
+                else if (convertedTime.equals("12s")) {
+                    AlarmScheduler.setSchedule(getBaseContext(), year, month, day, 12, 20);
+                }
+
+                else if (convertedTime.equals("2s")) {
+                    AlarmScheduler.setSchedule(getBaseContext(), year, month, day, 13, 35);
+                }
+
+                else if (convertedTime.equals("5:00-6:00pm")) {
+                    AlarmScheduler.setSchedule(getBaseContext(), year, month, day, 16, 50);
+                }
+
+                else if (convertedTime.equals("6:00-7:00pm")) {
+                    AlarmScheduler.setSchedule(getBaseContext(), year, month, day, 17, 50);
+                }
+
+                else if (convertedTime.equals("6:30-7:30pm")) {
+                    AlarmScheduler.setSchedule(getBaseContext(), year, month, day, 18, 20);
+                }
+
+                else if (convertedTime.equals("7:00-8:00pm")) {
+                    AlarmScheduler.setSchedule(getBaseContext(), year, month, day, 18, 50);
+                }
+
+                else if (convertedTime.equals("7:30=8:30pm")) {
+                    AlarmScheduler.setSchedule(getBaseContext(), year, month, day, 19, 20);
+                }
+
                 NotificationDbHelpher datasource = new NotificationDbHelpher(this);
                 datasource.insertNotification(newNotification);
                 displayNotification(newNotification);
